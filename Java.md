@@ -198,3 +198,6 @@ phone.replaceAll("(\\d{3})\\d{4}(\\d{4})","$1****$2");
 idCard.replaceAll("(\\d{4})\\d{10}(\\w{4})","$1*****$2");
 4304*****7733
 ```
+
+### 并发之Future模式
+[详见代码](https://github.com/zjutwyj/blog/src/java/src/future/Future.java)
