@@ -90,6 +90,12 @@ class Worker implements Runnable {
 class PlusWorker extends Worker {
 	public Object handle(Object input) {
 		Integer i = (Integer) input;
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return i * i * i;
 	}
 }
@@ -100,7 +106,7 @@ public class MasterWorker {
 		// 固定使用5个Worker,并指定worker
 		Master m = new Master(new PlusWorker(), 5);
 		// 提交100个子任务
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 10; i++) {
 			m.submit(i);
 		}
 		// 开始计算
@@ -121,6 +127,7 @@ public class MasterWorker {
 			}
 			if (i != null) {
 				re += i; // 最终结果
+				System.out.println(re);
 			}
 			if (key != null) {
 				resultMap.remove(key); // 移除已经被计算过的项
