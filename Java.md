@@ -153,3 +153,18 @@ for(int i= 0; i < colsize; i++){
 
 ### Decimal 相减
 b1.subtract(b2).doubleValue();
+
+### 数组排序
+```java
+Set<ProductAttributeMapStore> mapStore = ap.getProductAttributeMapStore();
+  List mapStoreList = new ArrayList(mapStore);
+  Collections.sort(mapStoreList, new Comparator<ProductAttributeMapStore>() {
+    public int compare(ProductAttributeMapStore o1, ProductAttributeMapStore o2) {
+      if (o1.getAddTime()!= null && o2.getAddTime()!=null){
+        return o1.getAddTime().compareTo(o2.getAddTime());
+      } else{
+        return 0;
+      }
+    }
+});
+```

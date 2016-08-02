@@ -11,3 +11,6 @@ postgresql.conf -> listen_addresses = '*' # what IP address(es) to listen on;
 
 ### psql数据恢复
 C:\Program Files\PostgreSQL\9.3\bin>psql -h localhost -U postgres -d abbccen -f "C:\Users\yongjin\Desktop\abbccen20160325.dmp"
+
+### mysql 运程访问
+MySql Workbench -> GRANT ALL ON jihui88_mobile.* TO root@'192.168.0.102' IDENTIFIED BY '123456'
