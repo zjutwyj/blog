@@ -168,3 +168,33 @@ Set<ProductAttributeMapStore> mapStore = ap.getProductAttributeMapStore();
     }
 });
 ```
+### 发送带html的邮件
+```java
+Message msg = new MimeMessage(session);
+msg.setSubject(title);
+msg.setContent(content, "text/html; charset=utf-8");
+```
+
+
+### memchached添加过期时间
+```java
+MemcachedUtils.add(user.get("id").toString(), user, new Date(System.currentTimeMillis()+1000*60*30));
+```
+
+
+### 遍历request.getAttributeNames()
+```java
+Enumeration<String> en = request.getAttributeNames();
+    while(en.hasMoreElements()){
+      sb.append(StringUtil.reflect(request.getAttribute(en.nextElement())));
+    }
+```
+
+
+### 隐藏手机号码身份证敏感信息
+```java
+phone.replaceAll("(\\d{3})\\d{4}(\\d{4})","$1****$2");
+152****4799
+idCard.replaceAll("(\\d{4})\\d{10}(\\w{4})","$1*****$2");
+4304*****7733
+```

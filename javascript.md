@@ -13,3 +13,16 @@
 [图片上传(fileupload)](https://blueimp.github.io/jQuery-File-Upload/) ["FileUpload"]<br>
 [移动端元素选择器(zepto)](http://www.zeptojs.cn/)<br>
 [图片相册(PhotoSwipe)](http://photoswipe.com)<br>
+
+
+### jsonpCallback is not a function
+```js
+$.ajax({
+    url : "http://www.jihui88.com/rest/api/shop/order/product/detail",
+    dataType : "jsonp",
+    jsonp: 'callback',     //this will be added in the query as parameter
+    jsonpCallback: 'jsonp_reply',  //this is wha
+    data : {
+      productId : productId
+    }});
+```

@@ -24,3 +24,9 @@ $ git merge iss53            // 合并新功能到master分支
 $ git branch -d iss53        // 删除分支
 
 $ git push origin            // 最后提交到运程服务器上
+
+### 版本号
+1.0.1  第1位：大版本升级，第2位：新功能添加，第3位：BUG修复
+
+### 查看 git global config
+$ git config --list

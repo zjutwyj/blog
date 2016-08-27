@@ -14,3 +14,10 @@ C:\Program Files\PostgreSQL\9.3\bin>psql -h localhost -U postgres -d abbccen -f 
 
 ### mysql 运程访问
 MySql Workbench -> GRANT ALL ON jihui88_mobile.* TO root@'192.168.0.102' IDENTIFIED BY '123456'
+
+### mysql 创建用户
+create user 'root'@'localhost' identified by '你的密码';
+grant all privileges on *.* to root@'localhost';
+
+### mysql 删除用户
+drop user root@'%';
