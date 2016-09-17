@@ -21,3 +21,7 @@ grant all privileges on *.* to root@'localhost';
 
 ### mysql 删除用户
 drop user root@'%';
+
+### PostgreSQL 替换字符串方法及字符串操作函数
+update ab set a=replace(a,'aaa','0') 把a字段里面的‘aaa’字符串替换成0
+[其它相关函数](http://www.jsjtt.com/shujuku/postgresql/29.html)

@@ -199,6 +199,7 @@ idCard.replaceAll("(\\d{4})\\d{10}(\\w{4})","$1*****$2");
 4304*****7733
 ```
 
+
 ### 并发之Future模式
 Future模式 去除了主函数中的等待时间，并合得原来需要等待的时间段可以用于处理其它业务逻辑， 从而充分利用计算机资源。
 [详见代码](https://github.com/zjutwyj/blog/blob/master/src/java/src/future/Future.java)
@@ -206,3 +207,7 @@ Future模式 去除了主函数中的等待时间，并合得原来需要等待�
 ### 并发之MasterWorker模式
 是一种将串行任务并行化的方法，被分解的子任务在系统中可以被并行处理。
 [详见代码](https://github.com/zjutwyj/blog/blob/master/src/java/src/masterwork/MasterWorker.java)
+
+### decodeURIComponent
+java.net.URLDecoder.decode(searchtext,"UTF-8")
+
