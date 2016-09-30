@@ -114,6 +114,7 @@ public class MasterWorker {
 
 		int re = 0; // 最终计算结果保存在此
 		Map<String, Object> resultMap = m.getResultMap();
+
 		while (resultMap.size() > 0 || !m.isComplete()) {
 			Set<String> keys = resultMap.keySet();
 			String key = null;

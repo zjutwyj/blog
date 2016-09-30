@@ -25,11 +25,16 @@ public class Future {
 
 	public static void main(String[] args) throws InterruptedException,
 			ExecutionException {
+
 		FutureTask<String> future = new FutureTask<String>(new Task("a"));
+
 		ExecutorService executor = Executors.newScheduledThreadPool(1);
 		executor.submit(future);
+
 		System.out.println("请求完毕！接着执行其它操作");
+
 		Thread.sleep(5000); // 其它操作
+
 		System.out.println("其它操作执行完毕， Future数据 = " + future.get());
 
 		// Console

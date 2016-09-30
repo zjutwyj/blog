@@ -211,3 +211,16 @@ Future模式 去除了主函数中的等待时间，并合得原来需要等待�
 ### decodeURIComponent
 java.net.URLDecoder.decode(searchtext,"UTF-8")
 
+### 正则表达式
+```java
+String pattern = "(data-replacefield=\\\\\"(.+?)\\\\\")";
+Pattern r = Pattern.compile(pattern, Pattern.CASE_INSENSITIVE | Pattern.MULTILINE);
+Matcher m = r.matcher(str);
+while (m.find()) {
+    System.out.println("matcher.group() :" + m.group() + " starting at index \"" + m.start()
+            + "\" and ending at index \"" + m.end() + "\"");
+    System.out.println("matcher.group(1) :" + m.group(1));
+    System.out.println("matcher.group(2) :" + m.group(2));
+    System.out.println(m.groupCount());
+}
+```
