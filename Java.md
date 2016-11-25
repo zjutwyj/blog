@@ -224,3 +224,175 @@ while (m.find()) {
     System.out.println(m.groupCount());
 }
 ```
+
+### jsp输出html代码
+```jsp
+<s:property value="content" escape="false" />
+```
+
+### freemarker 字符串格式化
+```freemarker
+${strnum?string(",##0.0#")}
+```
+
+### No binding factory for namespace http://apache.org/cxf/binding/jaxrs registered.
+application-context.xml
+```xml
+<import resource="classpath:META-INF/cxf/cxf.xml" />
+<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+<import resource="classpath:META-INF/cxf/cxf-extension-jaxrs-binding.xml" />
+```
+
+### eclipse 发布问题   即使取消自动编译，手动build工程，也不能编译问题
+>1、在src文件夹上点右键-Build Path-Use as Source Folder，重新进行编译，一切正常了。【使用过1次正常】
+2、在Eclipse工程文件夹上点右键-Refresh，重新编译，一功OK（这个方法一般不起作用）。
+3、右键Properties在Java Builder Path的Libraries的标签里面看是否有缺少或者无用的（一般带红差头）的，引入对应的jar包或者删除掉。
+4、在Properties里面设置Source.添加你的java路径.比如src，然后需要设置下面的Default output folder，这里设置你的输出路径也就是class路径了。
+5、右键Properties在里面的builder里面把项目的builder.xml引用(import)进来。
+6、把右键Properties在Java Builder Path的Libraries全部删除，尤其是jre，然后，点击保存，关闭eclipse，然后再打开，再把对应的jre和lib下边的相关jar引进来，保存，重新编译后就好了，我也不知道为啥，有一次我就这么弄好了。
+7、把class下边的有.class文件的话还是这样，把这些.class文件删除掉，然后elipse中菜单project—clear然后选中对应项目，在project菜单下边勾上Build Automaticlly（自动部署）,然后生成新的就class文件就OK了。
+8、把项目下边的.project删除掉，从同事身边运行正常的项目下边拷贝过来它的.project文件，刷新项目试试。
+9、把项目下边的.classpath删除掉，从同事身边运行正常的项目下边拷贝过来它的.classpath文件，刷新项目试试。
+10、终极解决办法，也是很管用的解决办法，就是把整个项目删除掉，删除之前把更改的内容提交到CVS或者SVN上，然后重新从SVN或者CVS上把项目档下来。
+11、server中，<Context docBase="xxx" path="/" reloadable="true">   path路径不对
+
+### Caused by: org.hibernate.MappingException: Could not determine type for: java.util.Map
+把Map类型改成HashMap
+
+### JdbcTemplate query
+```java
+String sql = "select count(distinct member_id) from abc_coupongain where coupon_id='" + coupon.getCouponId()
+          + "' group by member_id";
+
+      Object obj = baseService.query(sql, new ResultSetExtractor<Integer>() {
+        @Override
+        public Integer extractData(ResultSet rs) throws SQLException {
+          Integer count = 0;
+          while (rs.next()) {
+            count += rs.getInt("count");
+          }
+          return count;
+        }
+
+      });
+```
+### eclipse 快捷键
+http://www.cnblogs.com/GarfieldTom/p/3682070.html
+
+### 字符串时间转化为Date时间
+```java
+org.durcframework.core.util.DateUtil.DateUtil.convertStringToDate(String.valueOf(member.get("update_time")))
+// 或
+String time = getValue(addTime);
+if (StringUtil.isNotBlank(time)) {
+  String format = "yyyy/MM/dd";
+  if (time.contains("-")) {
+    format = "yyyy-MM-dd";
+  }
+  SimpleDateFormat sdf = new SimpleDateFormat(format);// 小写的mm表示的是分钟
+  try {
+      date = sdf.parse(time);
+      } catch (java.text.ParseException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+}
+```
+### excel操作
+```java
+AbcNews news = null;
+String filepath = uploadFile("/newsAddMulti/" + getCurrentUser().getUsername() + "/");
+InputStream is = new FileInputStream(filepath);
+HSSFWorkbook hssfWorkbook = new HSSFWorkbook(is);
+
+for (int numSheet = 0; numSheet < hssfWorkbook.getNumberOfSheets(); numSheet++) {
+  HSSFSheet hssfSheet = hssfWorkbook.getSheetAt(numSheet);
+  if (hssfSheet == null) {
+    continue;
+  }
+  // 循环行Row
+  int countNum = newSort();
+  int n = hssfSheet.getLastRowNum();
+  for (int rowNum = 1; rowNum <= hssfSheet.getLastRowNum(); rowNum++) {
+    HSSFRow hssfRow = hssfSheet.getRow(rowNum);
+    if (hssfRow == null) {
+      continue;
+    }
+    news = new AbcNews();
+
+    // 新闻标题
+    HSSFCell newsName = hssfRow.getCell((short) 0);
+    if (StringUtil.isBlank(getValue(newsName))) {
+      break;
+    }
+    news.setTitle(getValue(newsName));
+
+    // 新闻分类
+    HSSFCell cate = hssfRow.getCell((short) 1);
+    news.setCategory(getNewsCateIdByName(getValue(cate)));
+
+    // 新闻内容
+    HSSFCell content = hssfRow.getCell((short) 2);
+    news.setContent(getValue(content));
+
+    // 添加时间
+    HSSFCell addTime = hssfRow.getCell((short) 3);
+    Date date = new Date();
+    String time = getValue(addTime);
+    if (StringUtil.isNotBlank(time)) {
+      try {
+        HSSFCellStyle cellStyle = hssfWorkbook.createCellStyle();
+        cellStyle.setDataFormat(HSSFDataFormat.getBuiltinFormat("m/d/yy h:mm"));
+        addTime.setCellStyle(cellStyle);
+        date = addTime.getDateCellValue();
+      } catch (Exception ex) {
+        System.out.println(ex.getMessage());
+      }
+    }
+    news.setAddTime(date);
+
+    // 点击量
+    HSSFCell views = hssfRow.getCell((short) 4);
+    String hssfViews = getValue(views);
+    if (StringUtil.isNotBlank(hssfViews)) {
+      news.setViewsum(Math.round(Float.valueOf(hssfViews)));
+    }
+
+    // 其它
+    news.setDomain(domain);
+    news.setState(CommonConst.STATENORMAL);
+    news.setLanId(Integer
+        .valueOf(String.valueOf(getSession().getAttribute("lanId"))));
+    news.setNewsType("11");
+    news.setDisplay("01");
+    news.setSort(countNum + (n - rowNum));
+    news.setEnterpriseId(getCurrentEnt().getEnterpriseId());
+    news.setAdduserId(getCurrentUser().getUserId());
+    newsService.save(news);
+  }
+}
+```
+
+### excel HSSFWorkbook处理时间
+```java
+HSSFCell addTime = hssfRow.getCell((short) 3);
+Date date = new Date();
+String time = getValue(addTime);
+if (StringUtil.isNotBlank(time)) {
+  try {
+    HSSFCellStyle cellStyle = hssfWorkbook.createCellStyle();
+    cellStyle.setDataFormat(HSSFDataFormat.getBuiltinFormat("m/d/yy h:mm"));
+    addTime.setCellStyle(cellStyle);
+    date = addTime.getDateCellValue();
+  } catch (Exception ex) {
+    System.out.println(ex.getMessage());
+  }
+}
+news.setAddTime(date);
+```
+
+### float to int
+```java
+Math.round(float f)
+```

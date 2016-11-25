@@ -25,3 +25,37 @@ drop user root@'%';
 ### PostgreSQL 替换字符串方法及字符串操作函数
 update ab set a=replace(a,'aaa','0') 把a字段里面的‘aaa’字符串替换成0
 [其它相关函数](http://www.jsjtt.com/shujuku/postgresql/29.html)
+
+### sql 单表distinct/多表group by查询去除重复记录
+```sql
+select count(distinct member_id) from abc_coupongain where coupon_id='Coupon_0000000000000000000000542' group by member_id
+```
+
+### hibernate 常用注解
+>@Entity              --注释声明该类为持久类。将一个Javabean类声明为一 个实体的数据库表映射类,最好实现序列化.此时,默认情况下,所有的类属性都为映射到数据表的持久性字段.若在类中,添加另外属性,而非映射来数据库的, 要用下面的Transient来注解.
+
+>@Table(name="promotion_info")      --持久性映射的表(表名="promotion_info).@Table是类一级的注解,定义在@Entity下,为实体bean映射表,目录和schema的名字,默认为实体bean的类名,不带包名.
+
+>@Id--注释可以表明哪种属性是该类中的独特标识符(即相当于数据表的主键)。
+@GeneratedValue   --定义自动增长的主键的生成策略.
+@Transient             --将忽略这些字段和属性,不用持久化到数据库.适用于,在当前的持久类中,某些属性不是用于映射到数据表,而是用于其它的业务逻辑需要,这时,须将这些属性进行transient的注解.否则系统会因映射不到数据表相应字段而出错.
+@Temporal(TemporalType.TIMESTAMP)--声明时间格式
+@Enumerated         --声明枚举
+@Version                --声明添加对乐观锁定的支持
+@OneToOne            --可以建立实体bean之间的一对一的关联
+@OneToMany          --可以建立实体bean之间的一对多的关联
+@ManyToOne          --可以建立实体bean之间的多对一的关联
+@ManyToMany        --可以建立实体bean之间的多对多的关联
+@Formula               --一个SQL表达式，这种属性是只读的,不在数据库生成属性(可以使用sum、average、max等)
+@OrderBy               --Many端某个字段排序(List)
+
+[http://www.cnblogs.com/younggun/archive/2013/05/19/3086659.html](详见)
+
+
+### 解决hibernate无法赋值实体类问题
+```java
+PaginationSupport pagin = productService.findPageByCriteria(dc, pageSize, startIndex,
+        CriteriaSpecification.ROOT_ENTITY);
+```
+### Column 'id' in field list is ambiguous
+列'ID'在字段列表中重复，其实就是两张表有相同的字段，但是使用时表字段的名称前没有加表名，导致指代不明

@@ -26,3 +26,5 @@ $.ajax({
       productId : productId
     }});
 ```
+### facebook flow 静态类型检查
+[https://flowtype.org/docs/cli.html#_](https://flowtype.org/docs/cli.html#_)
