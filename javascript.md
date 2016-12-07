@@ -28,3 +28,9 @@ $.ajax({
 ```
 ### facebook flow 静态类型检查
 [https://flowtype.org/docs/cli.html#_](https://flowtype.org/docs/cli.html#_)
+
+### replaceAll替换
+```js
+string.replace(/reallyDo/g, replaceWith);
+string.replace(new RegExp(reallyDo, 'g'), replaceWith);
+```

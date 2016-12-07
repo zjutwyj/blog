@@ -396,3 +396,13 @@ news.setAddTime(date);
 ```java
 Math.round(float f)
 ```
+
+### org.springframework.web.servlet.PageNotFound
+1、Spring MVC容器确定启动了吗？贴出日志看看，如果没启动，肯定404；
+2、如果启动成功了，Controller类是不是写在com.yeepay.g3.boss.onlinehelp这个包下面的，而且类名上配置有@Controller这个注解？
+3、@RequestMapping(value = "help/to_add")，RequestMapping的value都是从ContextPath开始的，也就是说通常都是以"/"开始；
+4、如果方法执行了，但页面模板没找到也这个错。所以在toAdd()方法里打个标记，例如log或System.out一下，看看方法有没有执行，如果执行了，则要检查模板路径。
+
+### @Transient不起作用
+检查下引入的包是否正确
+import javax.persistence.Transient;
