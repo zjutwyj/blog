@@ -1,130 +1,102 @@
-{
-  "id": "all",
-  "principal": {
-    "address": "聚光中心C211",
-    "name": "王永进",
-    "state": "03",
-    "enterpriseId": "Enterp_0000000000000000000049090",
-    "phone": "057189877666",
-    "certNumber": "13342423424",
-    "certType": "01",
-    "certIndate": 1481044250521,
-    "area": "402881882ba8753a012ba8da48e000b0,402881882ba8753a012ba8da7d2f00b1",
-    "photo": "upload/u/u4/user/sample.png",
-    "certFrontPic": "upload/u/u4/user/sample.png",
-    "principalId": "Principal_0000000000000000000322",
-    "certReversePic": "upload/u/u4/user/sample.png",
-    "certHandPic": "upload/u/u4/user/sample.png",
-    "addTime": 1481073050533,
-    "cellphone": "13588506961",
-    "email": "zjut_wyj@163.com",
-    "updateTime": 1481115062864
-  },
-  "profileId": "all",
-  "bind": { "address": "jihui880.com", "state": "00", "type": "D", "fileName": null, "username": "jihui88", "applyTime": null, "bindId": "Bind_000000000000000000000000399", "denyReason": null, "icp": "12345670", "approveTime": null },
-  "user": {
-    "address": null,
-    "name": "王永进0",
-    "state": "01",
-    "type": "01",
-    "country": null,
-    "domain": "jihui88.com",
-    "position": "aaa",
-    "username": "jihui88",
-    "code": null,
-    "url": "http://www.jihui88.com",
-    "password": "2c67e8fefbea3b62fc6077ac3a193f04",
-    "enterpriseId": "Enterp_0000000000000000000049090",
-    "fax": "3",
-    "phone": "13588506963",
-    "dist": null,
-    "entUrl": "http://jihui88.jihui88.com",
-    "userType": "电商版",
-    "qq": "1228328180",
-    "msn": "zutwyj@163.com",
-    "codestate": null,
-    "phone24": null,
-    "url2": "www.jihui88.com",
-    "zipcode": "312000",
-    "vericode": "8536kwja3ddmd5905sl2n66feqskeaq7",
-    "score": null,
-    "password2": "",
-    "pwdAnswer": null,
-    "pcode": null,
-    "sitemap": null,
-    "robotsurl": null,
-    "jsonstr": [{ "text": "选项", "value": "aaa", "checked": false, "children": [], "dx": 0, "_options": { "_speed": 9, "_items": true, "_collection": null, "_data": {} } }],
-    "pcSitePayTime": "2016-03-09,2016-03-24",
-    "pwdQuestion": null,
-    "mobileSitePayTime": "2016-03-09,2017-03-09",
-    "addTime": 1433494101734,
-    "userId": "User_000000000000000000000001220",
-    "grade": "07",
-    "cellphone": "13588506963",
-    "email": "zjut_wyj2@163.com",
-    "enterprise": { "address": "402881882ba8753a012ba8da48e000b0,402881882ba8753a012ba8da7d2f00b1", "name": "浙江机汇网络科技有限公司0", "key": null, "type": "01", "url": "jihui88.jihui88.com", "enterpriseId": "Enterp_0000000000000000000049090", "icp": "12345670", "industry": "ins_026", "phone": null, "customer": null, "dist": "浙江省杭州市文三路822号2", "regTime": "2013-01-02", "brand": null, "staffSum": "100", "legalPre": "王永进", "market": null, "guess": null, "logo": "upload/j/j2/jihui88/picture/2015/06/09/69bb7097-c9cf-4875-adeb-b7471fd7b4ef.jpg", "oem": null, "entAddress": "未填写", "broadcast": "01", "gsbsEjym": null, "sincerity": null, "certNumber": "33333", "qasyscert": null, "gsbsZym": "666666", "ipadSite": null, "tel400": null, "bank": null, "mobileSite": "07", "mobileCode": null, "rdSum": null, "certType": "01", "monthProd": null, "tel400true": null, "certPic": null, "mapaddress": "MAPBZNCBSWTWQPQEXIHAX", "icon": "upload/j/j2/jihui88/picture/2015/06/13/a84cd978-b24f-4d0a-a0af-6f63c0c8341e.png", "mainBusiness": "互联网产品", "annualTurnover": null, "annualExport": null, "siteServiceType": null, "redicpNumber": "12345678", "businessType": "03", "domainCertPic": null, "factoryArea": null, "qualityControl": null, "businessPattern": null, "annualImport": null, "legalPersonPhoto": "upload/j/j2/jihui88/picture/2016/11/21/2601003f-d095-4023-be79-d27f3eb19e43.jpg", "legalPersonBust": "upload/j/j2/jihui88/picture/2016/07/26/ae5b0f6a-f768-4f26-857f-ee74d4731a4d.jpg", "legalPersonIdNumber": "330621198701053816", "legalPersonCellphone": "13588506961", "registeredCapital": null, "bankAccount": null, "edesc": "公司简介", "userId": "User_000000000000000000000001220", "email": null },
-    "wcdMember": "01",
-    "sex": "00"
-  },
-  "enterprise": {
-    "address": "402881882ba8753a012ba8da48e000b0,402881882ba8753a012ba8da7d2f00b1",
-    "name": "浙江机汇网络科技有限公司0",
-    "key": null,
-    "type": "01",
-    "url": "jihui88.jihui88.com",
-    "enterpriseId": "Enterp_0000000000000000000049090",
-    "icp": "12345670",
-    "industry": "ins_026",
-    "phone": null,
-    "customer": null,
-    "dist": "浙江省杭州市文三路822号2",
-    "regTime": "2013-01-02",
-    "brand": null,
-    "staffSum": "100",
-    "legalPre": "王永进",
-    "market": null,
-    "guess": null,
-    "logo": "upload/j/j2/jihui88/picture/2015/06/09/69bb7097-c9cf-4875-adeb-b7471fd7b4ef.jpg",
-    "oem": null,
-    "entAddress": "未填写",
-    "broadcast": "01",
-    "gsbsEjym": null,
-    "sincerity": null,
-    "certNumber": "33333",
-    "qasyscert": null,
-    "gsbsZym": "666666",
-    "ipadSite": null,
-    "tel400": null,
-    "bank": null,
-    "mobileSite": "07",
-    "mobileCode": null,
-    "rdSum": null,
-    "certType": "01",
-    "monthProd": null,
-    "tel400true": null,
-    "certPic": null,
-    "mapaddress": "MAPBZNCBSWTWQPQEXIHAX",
-    "icon": "upload/j/j2/jihui88/picture/2015/06/13/a84cd978-b24f-4d0a-a0af-6f63c0c8341e.png",
-    "mainBusiness": "互联网产品",
-    "annualTurnover": null,
-    "annualExport": null,
-    "siteServiceType": null,
-    "redicpNumber": "12345678",
-    "businessType": "03",
-    "domainCertPic": null,
-    "factoryArea": null,
-    "qualityControl": null,
-    "businessPattern": null,
-    "annualImport": null,
-    "legalPersonPhoto": "upload/j/j2/jihui88/picture/2016/11/21/2601003f-d095-4023-be79-d27f3eb19e43.jpg",
-    "legalPersonBust": "upload/j/j2/jihui88/picture/2016/07/26/ae5b0f6a-f768-4f26-857f-ee74d4731a4d.jpg",
-    "legalPersonIdNumber": "330621198701053816",
-    "legalPersonCellphone": "13588506961",
-    "registeredCapital": null,
-    "bankAccount": null,
-    "edesc": "公司简介",
-    "userId": "User_000000000000000000000001220",
-    "email": null
-  },
-  "time": 1481115062952
-}
+2016-12-21 11:27:50.796 [http-bio-18083-exec-4] [DEBUG]  com.jihui88.sys.entity.SjWxconfig.select {BaseJdbcLogger.java:132} - ooo Using Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@1449d578]
+2016-12-21 11:27:50.797 [http-bio-18083-exec-4] [DEBUG]  com.jihui88.sys.entity.SjWxconfig.select {BaseJdbcLogger.java:132} - ==>  Preparing: select id as wxConfigId, layout_id as layoutId, appid as appid, appsecret as appsecret, add_time as addTime from sj_wxconfig w WHERE layout_id = ?
+2016-12-21 11:27:50.799 [http-bio-18083-exec-4] [DEBUG]  com.jihui88.sys.entity.SjWxconfig.select {BaseJdbcLogger.java:132} - ==> Parameters: 107(Integer)
+2016-12-21 11:27:50.825 [http-bio-18083-exec-4] [DEBUG]  com.jihui88.sys.entity.SjWxconfig.select {BaseJdbcLogger.java:132} - <==      Total: 0
+========= 【getwxjssdk】requesturl = http://www.jihui88.net/jihui_open_oauth/api/oauth/jssdk?appid=wx93e4bf53e1a67934&url=http%3A%2F%2Fsj.jihui88.com%2Frest%2Fsite%2F107%2Findex%3Ffrom%3Dsinglemessage
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.841 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.useragent = Jakarta Commons-HttpClient/3.0.1
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.844 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.protocol.version = HTTP/1.1
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.847 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.connection-manager.class = class org.apache.commons.httpclient.SimpleHttpConnectionManager
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.847 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.protocol.cookie-policy = rfc2109
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.848 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.protocol.element-charset = US-ASCII
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.849 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.protocol.content-charset = ISO-8859-1
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.851 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.method.retry-handler = org.apache.commons.httpclient.DefaultHttpMethodRetryHandler@759f41f1
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.851 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.dateparser.patterns = [EEE, dd MMM yyyy HH:mm:ss zzz, EEEE, dd-MMM-yy HH:mm:ss zzz, EEE MMM d HH:mm:ss yyyy, EEE, dd-MMM-yyyy HH:mm:ss z, EEE, dd-MMM-yyyy HH-mm-ss z, EEE, dd MMM yy HH:mm:ss z, EEE dd-MMM-yyyy HH:mm:ss z, EEE dd MMM yyyy HH:mm:ss z, EEE dd-MMM-yyyy HH-mm-ss z, EEE dd-MMM-yy HH:mm:ss z, EEE dd MMM yy HH:mm:ss z, EEE,dd-MMM-yy HH:mm:ss z, EEE,dd-MMM-yyyy HH:mm:ss z, EEE, dd-MM-yyyy HH:mm:ss z]
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.852 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.connection.timeout = 30000
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.853 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.socket.timeout = 60000
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.853 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.connection.stalecheck = true
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.854 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.tcp.nodelay = true
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.854 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.connection-manager.max-total = 400
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.857 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:71} - Java version: 1.7.0_80
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.858 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:72} - Java vendor: Oracle Corporation
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.858 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:73} - Java class path: /usr/local/tomcatjhmobileWebSite/bin/bootstrap.jar:/usr/local/tomcatjhmobileWebSite/bin/tomcat-juli.jar
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.859 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:74} - Operating system name: Linux
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.859 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:75} - Operating system architecture: amd64
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.860 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:76} - Operating system version: 3.13.0-32-generic
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.861 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:81} - SUN 1.7: SUN (DSA key/parameter generation; DSA signing; SHA-1, MD5 digests; SecureRandom; X.509 certificates; JKS keystore; PKIX CertPathValidator; PKIX CertPathBuilder; LDAP, Collection CertStores, JavaPolicy Policy; JavaLoginConfig Configuration)
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.861 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:81} - SunRsaSign 1.7: Sun RSA signature provider
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.862 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:81} - SunEC 1.7: Sun Elliptic Curve provider (EC, ECDSA, ECDH)
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.862 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:81} - SunJSSE 1.7: Sun JSSE provider(PKCS12, SunX509 key/trust factories, SSLv3, TLSv1)
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.863 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:81} - SunJCE 1.7: SunJCE Provider (implements RSA, DES, Triple DES, AES, Blowfish, ARCFOUR, RC2, PBE, Diffie-Hellman, HMAC)
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.863 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:81} - SunJGSS 1.7: Sun (Kerberos v5, SPNEGO)
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.864 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:81} - SunSASL 1.7: Sun SASL provider(implements client mechanisms for: DIGEST-MD5, GSSAPI, EXTERNAL, PLAIN, CRAM-MD5, NTLM; server mechanisms for: DIGEST-MD5, GSSAPI, CRAM-MD5, NTLM)
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.864 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:81} - XMLDSig 1.0: XMLDSig (DOM XMLSignatureFactory; DOM KeyInfoFactory)
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.865 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpClient {HttpClient.java:81} - SunPCSC 1.7: Sun PC/SC provider
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:50.872 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.params.DefaultHttpParams {DefaultHttpParams.java:150} - Set parameter http.connection-manager.timeout = 30000
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:51.061 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpConnection {HttpConnection.java:691} - Open connection to www.jihui88.net:80
+2016-12-21 11:27:51.079 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - >> "GET /jihui_open_oauth/api/oauth/jssdk?appid=wx93e4bf53e1a67934&url=http%3A%2F%2Fsj.jihui88.com%2Frest%2Fsite%2F107%2Findex%3Ffrom%3Dsinglemessage HTTP/1.1[\r][\n]"
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:51.080 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpMethodBase {HttpMethodBase.java:1235} - Adding Host request header
+2016-12-21 11:27:51.093 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - >> "User-Agent: Jakarta Commons-HttpClient/3.0.1[\r][\n]"
+2016-12-21 11:27:51.093 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - >> "Host: www.jihui88.net[\r][\n]"
+2016-12-21 11:27:51.094 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - >> "[\r][\n]"
+2016-12-21 11:27:51.106 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - << "HTTP/1.1 200 OK[\r][\n]"
+2016-12-21 11:27:51.108 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - << "Server: nginx/1.4.6 (Ubuntu)[\r][\n]"
+2016-12-21 11:27:51.109 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - << "Date: Wed, 21 Dec 2016 03:27:59 GMT[\r][\n]"
+2016-12-21 11:27:51.109 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - << "Content-Type: application/json; charset=utf-8[\r][\n]"
+2016-12-21 11:27:51.110 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - << "Transfer-Encoding: chunked[\r][\n]"
+2016-12-21 11:27:51.111 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - << "Connection: keep-alive[\r][\n]"
+2016-12-21 11:27:51.111 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - << "X-Powered-By: PHP/5.5.9-1ubuntu4.19[\r][\n]"
+2016-12-21 11:27:51.112 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - << "Access-Control-Allow-Origin: *[\r][\n]"
+2016-12-21 11:27:51.112 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - << "Access-Control-Allow-Headers: Origin ,X-Requested-With ,Content-Type ,Accept ,Access-Control-Request-Method[\r][\n]"
+2016-12-21 11:27:51.113 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.header {Wire.java:69} - << "Access-Control-Allow-Methods: GET ,POST ,OPTIONS ,PUT ,PATCH ,DELETE[\r][\n]"
+2016-12-21 11:27:51.118 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.content {Wire.java:83} - << "1"
+2016-12-21 11:27:51.118 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.content {Wire.java:83} - << "b"
+2016-12-21 11:27:51.119 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.content {Wire.java:83} - << "d"
+2016-12-21 11:27:51.119 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.content {Wire.java:83} - << "[\r]"
+2016-12-21 11:27:51.120 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.content {Wire.java:69} - << "[\n]"
+2016-12-21 11:27:51.120 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.content {Wire.java:83} - << "{"appId":"wx93e4bf53e1a67934","nonceStr":"xI5vDdtHtnH4BalJ","timestamp":1482290879,"url":"http:\/\/sj.jihui88.com\/rest\/site\/107\/index?from=singlemessage","signature":"dd8f6fbb3ef9cde89c1c6d336031d8814ebb7249","rawString":"jsapi_ticket=gdzxN2g622vVfv3lEXnBsn4t55POZcysIJ-6VBlBl4acjJ9m5zpB4Ya7-HRd6e6A0xwMBNgVxyNjGwFroyWv8A&noncestr=xI5vDdtHtnH4BalJ&timestamp=1482290879&url=http:\/\/sj.jihui88.com\/rest\/site\/107\/index?from=singlemessage"}"
+2016-12-21 11:27:51.121 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.content {Wire.java:83} - << "[\r]"
+2016-12-21 11:27:51.121 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.content {Wire.java:69} - << "[\n]"
+2016-12-21 11:27:51.122 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.content {Wire.java:83} - << "0"
+2016-12-21 11:27:51.122 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.content {Wire.java:83} - << "[\r]"
+2016-12-21 11:27:51.123 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.content {Wire.java:69} - << "[\n]"
+2016-12-21 11:27:51.123 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.content {Wire.java:83} - << "[\r]"
+2016-12-21 11:27:51.124 [http-bio-18083-exec-4] [DEBUG]  httpclient.wire.content {Wire.java:69} - << "[\n]"
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:51.124 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpMethodBase {HttpMethodBase.java:911} - Should NOT close connection in response to directive: keep-alive
+log4j:ERROR Attempted to append to closed appender named [fileOut].
+2016-12-21 11:27:51.125 [http-bio-18083-exec-4] [DEBUG]  org.apache.commons.httpclient.HttpConnection {HttpConnection.java:1177} - Releasing connection back to connection manager.
+========= 【getwxjssdk】rxml = {"appId":"wx93e4bf53e1a67934","nonceStr":"xI5vDdtHtnH4BalJ","timestamp":1482290879,"url":"http:\/\/sj.jihui88.com\/rest\/site\/107\/index?from=singlemessage","signature":"dd8f6fbb3ef9cde89c1c6d336031d8814ebb7249","rawString":"jsapi_ticket=gdzxN2g622vVfv3lEXnBsn4t55POZcysIJ-6VBlBl4acjJ9m5zpB4Ya7-HRd6e6A0xwMBNgVxyNjGwFroyWv8A&noncestr=xI5vDdtHtnH4BalJ&timestamp=1482290879&url=http:\/\/sj.jihui88.com\/rest\/site\/107\/index?from=singlemessage"}
+
+
+encodeURIComponent()

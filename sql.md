@@ -59,3 +59,29 @@ PaginationSupport pagin = productService.findPageByCriteria(dc, pageSize, startI
 ```
 ### Column 'id' in field list is ambiguous
 列'ID'在字段列表中重复，其实就是两张表有相同的字段，但是使用时表字段的名称前没有加表名，导致指代不明
+
+### 转发排行前50名
+```sql
+SELECT
+  count(1) AS logCount,
+  info.headimgurl AS headimgurl,
+  info.mobile AS NAME,
+  info.openid AS openid
+FROM
+  wcd_log log
+INNER JOIN user_info info ON log.belong_id = info.openid
+WHERE
+  wcd_id ='2314' group by belong_id order by logCount desc limit 50
+```
+
+### 修改数据库密码
+```sql
+alter user postgres with password 'new password';
+```
+
+
+
+
+
+
+

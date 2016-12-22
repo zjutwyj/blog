@@ -1,5 +1,405 @@
-<div><p>节能燃气灶,节能炉头,节能灶，版权所有：浙江绿厨节能科技有限公司 | 浙ICP备13013740号 |<span>关注我们：</span><span><a href="http://e.weibo.com/hzlvchu/profile"><img src="images/sian_wb.jpg"></a><a href="http://e.t.qq.com/lvchujieneng"><img src="images/tx_wb.jpg" ></a>
-  </div></span></p><img src="http://www.6chu.cn/uploads/2016/1013/20161013131044247262_thumb.png" />
-<div>
-  <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011802000792">img src="" style="float:left;"/><p>浙公网安备 33011802000792号</p></a>
+<div id=dolog>
+  <div id=registerDiv class="dolog" style="display: none;position:absolute;left:40%;top:5%;z-index:9999;">
+    <div class="aui_outer">
+      <table class="aui_border">
+        <tbody>
+          <tr>
+            <td class="aui_nw"></td>
+            <td class="aui_n"></td>
+            <td class="aui_ne"></td>
+          </tr>
+          <tr>
+            <td class="aui_w"></td>
+            <td class="aui_c">
+              <div class="aui_inner">
+                <table class="aui_dialog">
+                  <tbody>
+                    <tr>
+                      <td class="aui_header" colspan="2">
+                        <div class="aui_titleBar">
+                          <div class="aui_title" style="cursor: move; display: block;">${lan['topbar.register']}</div>
+                          <a href="javascript:/*artDialog*/;" class="aui_close" style="display: block;">×</a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="aui_icon" style="display: none;">
+                        <div class="aui_iconBg" style="background: none repeat scroll 0% 0% transparent;"></div>
+                      </td>
+                      <td class="aui_main" style="width: auto; height: auto; visibility: visible;">
+                        <div class="aui_content" style="width:480px;">
+                          <form action="http://www.jihui88.com/rest/api/shop/member/register" name="register" class="validateForm" onsubmit="return check_reg();">
+                            <div class="area">
+                              <div class="list">
+                                <div class="item clearfix registerId">
+                                  <div class="nameTxt">
+                                    ${lan['dolog.name']}
+                                    <font color="red"> * </font>
+                                  </div>
+                                  <div class="con">
+                                    <input maxlength="20" id="registerId" name="username" class="text input noime {required:true,messages:{required:'${lan['dolog.requiredName']}'}} " autocomplete="off" disableautocomplete type="text">
+                                    <div id="suggestLoginid" style="display: none;"></div>
+                                  </div>
+                                  <div class="tip">
+                                    <div id="loginIdTip" class="no"></div>
+                                  </div>
+                                </div>
+                                <div class="item clearfix password">
+                                  <div class="nameTxt">
+                                    ${lan['dolog.password']}
+                                    <font color="red"> * </font>
+                                  </div>
+                                  <div class="con">
+                                    <input type="password" class="text input {required:true,messages:{required:'${lan['dolog.requiredPassword']}'}}" name="password" maxlength="20" id="registerPassword">
+                                  </div>
+                                  <div class="tip">
+                                    <div class="no" id="passwordTip"></div>
+                                  </div>
+                                </div>
+                                <div class="item clearfix confirm_password">
+                                  <div class="nameTxt">
+                                    ${lan['dolog.confirmPassword']}
+                                    <font color="red"> * </font>
+                                  </div>
+                                  <div class="con">
+                                    <input type="password" class="text input {required:true,equalTo:'#registerPassword',messages:{required:'${lan['dolog.requiredCPassword']}',equalTo:'${lan['dolog.matchPassword']}'}}" name="confirmPassword" maxlength="20" id="confirmPassword">
+                                  </div>
+                                  <div class="tip">
+                                    <div id="confirmPasswordTip"></div>
+                                  </div>
+                                </div>
+                                <div class="item clearfix email">
+                                  <div class="nameTxt">
+                                    ${lan['dolog.email']}
+                                  </div>
+                                  <div class="con">
+                                    <input id="emailName" name="email" maxlength="50" class="text emailName input noime">
+                                  </div>
+                                  <div class="tip">
+                                    <div class="" id="emailTip"></div>
+                                  </div>
+                                </div>
+                                <div class="item1">
+                                  <div class="nameTxt">
+                                    <font color="red"> </font>
+                                  </div>
+                                </div>
+                                <#list enabledMemberAttributeList as list>
+                                  <div class="item clearfix registerId">
+                                    <div class="nameTxt">
+                                      ${list.name}
+                                      <#if list.isRequired=='01'>
+                                        <font color="red"> * </font>
+                                      </#if>
+                                    </div>
+                                    <div class="con">
+                                      <#if list.attributeType=="text">
+                                        <input type="text" name="${list.attId}" class="formText<#if list.isRequired=='01'> {required: true}</#if>" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                        <#elseif list.attributeType=="number">
+                                          <input type="text" name="${list.attId}" class="formText {<#if list.isRequired=='01'>required: true, </#if>number: true}" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                          <#elseif list.attributeType=="alphaint">
+                                            <input type="text" name="${list.attId}" class="formText {<#if list.isRequired=='01'>required: true, </#if>lettersonly: true}" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                            <#elseif list.attributeType=="email">
+                                              <input type="text" name="${list.attId}" class="formText {<#if list.isRequired=='01'>required: true, </#if>email: true}" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                              <#elseif list.attributeType=="select">
+                                                <select name="${list.attId}" <#if list.isRequired=='01'> class="{required: true}"</#if>>
+                                      <option value="">请选择...</option>
+                                      <#list list.attributeOptionList as attributeOptionList>
+                                        <option value="${attributeOptionList}">${attributeOptionList}</option>
+                                      </#list>
+                                      </select>
+                                      <#elseif list.attributeType=="checkbox">
+                                        <#list list.attributeOptionList as attributeOptionList>
+                                          <label>
+                                            <input type="checkbox" name="${list.attId}" <#if list.isRequired=='01'> class="{required: true, messagePosition: '#${list.attId}MessagePosition'}"</#if> value="${attributeOptionList}" />${attributeOptionList}</label>
+                                        </#list>
+                                        <span id="${list.attId}MessagePosition"></span>
+                                        <#elseif list.attributeType=="name">
+                                          <input type="text" name="${list.attId}" class="formText <#if list.isRequired=='01'>{required: true}</#if>" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                          <#elseif list.attributeType=="gender">
+                                            <label>
+                                              <input type="radio" name="${list.attId}" <#if list.isRequired=='01'> class="{required: true, messagePosition: '#${list.attId}MessagePosition'}"</#if> value="male"
+                                              <#if (member.memberAttributeMap.get(list)[0]=="male" )!> checked</#if> />${action.getText("Gender.male")}</label>
+                                            <label>
+                                              <input type="radio" name="${list.attId}" <#if list.isRequired=='01'> class="{required: true, messagePosition: '#${list.attId}MessagePosition'}"</#if> value="female"
+                                              <#if (member.memberAttributeMap.get(list)[0]=="female" )!> checked</#if> />${action.getText("Gender.female")}</label>
+                                            <span id="${list.attId}MessagePosition"></span>
+                                            <#elseif list.attributeType=="date">
+                                              <input type="text" name="${list.attId}" class="formText datePicker {<#if list.isRequired=='01'>required: true, </#if>dateISO: true}" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                              <#elseif list.attributeType=="area">
+                                                <input type="text" name="${list.attId}" class="formText areaSelect<#if list.isRequired=='01'> {required: true}</#if>" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                                <#elseif list.attributeType=="address">
+                                                  <input type="text" name="${list.attId}" class="formText <#if list.isRequired=='01'>{required: true}</#if>" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                                  <#elseif list.attributeType=="zipCode">
+                                                    <input type="text" name="${list.attId}" class="formText {<#if list.isRequired=='01'>required: true, </#if>zipCode: true}" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                                    <#elseif list.attributeType=="mobile">
+                                                      <input type="text" name="${list.attId}" class="formText {<#if list.isRequired=='01'>required: true, </#if>mobile: true}" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                                      <#elseif list.attributeType=="phone">
+                                                        <input type="text" name="${list.attId}" class="formText {<#if list.isRequired=='01'>required: true, </#if>phone: true}" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                                        <#elseif list.attributeType=="qq">
+                                                          <input type="text" name="${list.attId}" class="formText <#if list.isRequired=='01'>{required: true}</#if>" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                                          <#elseif list.attributeType=="msn">
+                                                            <input type="text" name="${list.attId}" class="formText <#if list.isRequired=='01'>{required: true}</#if>" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                                            <#elseif list.attributeType=="wangwang">
+                                                              <input type="text" name="${list.attId}" class="formText <#if list.isRequired=='01'>{required: true}</#if>" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                                              <#elseif list.attributeType=="skype">
+                                                                <input type="text" name="${list.attId}" class="formText <#if list.isRequired=='01'>{required: true}</#if>" value="${(member.memberAttributeMap.get(list)[0])!}" />
+                                                                </#if>
+                                                                <div id="suggestLoginid" style="display: none;"></div>
+                                    </div>
+                                    <div class="tip">
+                                      <div id="loginIdTip" class="no"></div>
+                                    </div>
+                                  </div>
+                                </#list>
+                                <div class="item1 aui_buttons" style="position:absolute;bottom:0;height:47px;">
+                                  <div class="nameTxt" style="display:none;">
+                                    <font color="red"> </font>
+                                  </div>
+                                  <div class="con" style="text-align: right;padding:8px;">
+                                    <input id="regSubmit" class="button aui_state_highlight" type="button" value="${lan['register'] }">
+                                    <input class="button" type="reset" value="${lan['reset'] }">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <input type="hidden" name="enterpriseId" value="${enterprise.enterpriseId }">
+                          </form>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="aui_footer" colspan="2">
+                        <div class="aui_buttons" style="display: none;"></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </td>
+            <td class="aui_e"></td>
+          </tr>
+          <tr>
+            <td class="aui_sw"></td>
+            <td class="aui_s"></td>
+            <td class="aui_se" style="cursor: se-resize;"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div id=loginDiv class="dolog" style="display: none;position:absolute;left:40%;top:5%;z-index:99999;">
+    <div class="aui_outer">
+      <table class="aui_border">
+        <tbody>
+          <tr>
+            <td class="aui_nw"></td>
+            <td class="aui_n"></td>
+            <td class="aui_ne"></td>
+          </tr>
+          <tr>
+            <td class="aui_w"></td>
+            <td class="aui_c">
+              <div class="aui_inner">
+                <table class="aui_dialog">
+                  <tbody>
+                    <tr>
+                      <td class="aui_header" colspan="2">
+                        <div class="aui_titleBar">
+                          <div class="aui_title" style="cursor: move; display: block;">${lan['topbar.login']}</div>
+                          <a href="javascript:/*artDialog*/;" class="aui_close" style="display: block;">×</a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="aui_icon" style="display: none;">
+                        <div class="aui_iconBg" style="background: none repeat scroll 0% 0% transparent;"></div>
+                      </td>
+                      <td class="aui_main" style="width: auto; height: auto; visibility: visible;">
+                        <div class="aui_content" style="width:360px;height:240px;">
+                          <form id="login" name="login" action="http://www.jihui88.com/rest/api/shop/member/login" class="validateForm" onsubmit="return check_login();">
+                            <div class="area">
+                              <div class="list">
+                                <div class="item" id=logintip style="display: none; height: 22px; color: #C53032;">
+                                  <div class="nameTxt">&nbsp;</div>
+                                  <div class="con">
+                                    <div id=logFlag>${lan['dolog.loginError']}</div>
+                                  </div>
+                                </div>
+                                <div class="item clearfix loginid">
+                                  <div class="nameTxt">${lan['dolog.username']}</div>
+                                  <div class="con">
+                                    <input maxlength="20" id="loginid" name="username" class="text input noime {required:true,messages:{required:'${lan['dolog.requiredUsername']}'}} " type="text">
+                                    <div id="suggestLoginid" style="display: none;"></div>
+                                  </div>
+                                  <div class="tip">
+                                    <div id="loginIdTip" class="no"></div>
+                                  </div>
+                                </div>
+                                <div class="item clearfix password">
+                                  <div class="nameTxt">${lan['dolog.password']}</div>
+                                  <div class="con">
+                                    <input type="password" class="text input {required:true,messages:{required:'${lan['dolog.requiredPassword']}'}}" name="password" maxlength="20" id="password">
+                                  </div>
+                                  <div class="tip">
+                                    <div class="no" id="passwordTip"></div>
+                                  </div>
+                                </div>
+                                <div class="item clearfix password">
+                                  <div class="nameTxt">${lan['valiCode']}</div>
+                                  <div class="con">
+                                    <input type="text" class="text input {required:true,messages:{required:'${lan['requiredValiCode']}'}}" name="randCode" maxlength="20" id="randCode" style="width:100px;"><img class="randCode" src="http://www.jihui88.com/veriImg" />
+                                  </div>
+                                  <div class="tip">
+                                    <div class="no" id="passwordTip"></div>
+                                  </div>
+                                </div>
+                                <div class="item aui_buttons" style="position:absolute;bottom:0;width:100%;height:47px;">
+                                  <div class="nameTxt" style="display:none;">
+                                    <font color="red"> </font>
+                                  </div>
+                                  <div class="con " style="text-align: right;padding:8px;">
+                                    <input class="button aui_state_highlight" id="loginSubmit" type="button" value="${lan['login'] }">
+                                    <input class="button" type="reset" value="${lan['reset'] }">
+                                    <input class="button regBtn" type="button" onclick="javascript:$('#loginDiv').hide();$('#registerLink').click();" value="${lan['register'] }">
+                                    <input id="forgetBtn" class="button fogBtn" type="button" value="${lan['forget']}">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <input id="loginEntId" type="hidden" name="enterpriseId" value="${enterprise.enterpriseId }">
+                          </form>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="aui_footer" colspan="2">
+                        <div class="aui_buttons" style="display: none;"></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </td>
+            <td class="aui_e"></td>
+          </tr>
+          <tr>
+            <td class="aui_sw"></td>
+            <td class="aui_s"></td>
+            <td class="aui_se" style="cursor: se-resize;"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div id=forgetDiv class="dolog" style="display: none;position:absolute;left:40%;top:5%;z-index:99999;">
+    <div class="aui_outer">
+      <table class="aui_border">
+        <tbody>
+          <tr>
+            <td class="aui_nw"></td>
+            <td class="aui_n"></td>
+            <td class="aui_ne"></td>
+          </tr>
+          <tr>
+            <td class="aui_w"></td>
+            <td class="aui_c">
+              <div class="aui_inner">
+                <table class="aui_dialog">
+                  <tbody>
+                    <tr>
+                      <td class="aui_header" colspan="2">
+                        <div class="aui_titleBar">
+                          <div class="aui_title" style="cursor: move; display: block;">${lan['forget']}</div>
+                          <a href="javascript:/*artDialog*/;" class="aui_close" style="display: block;">×</a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="aui_icon" style="display: none;">
+                        <div class="aui_iconBg" style="background: none repeat scroll 0% 0% transparent;"></div>
+                      </td>
+                      <td class="aui_main" style="width: auto; height: auto; visibility: visible;">
+                        <div class="aui_content" style="width:360px;height:240px;">
+                          <form id="login" name="login" action="http://www.jihui88.com/rest/api/shop/member/login" class="validateForm" onsubmit="return check_login();">
+                            <div class="area">
+                              <div class="list">
+                                <div class="item" id=logintip style="display: none; height: 22px; color: #C53032;">
+                                  <div class="nameTxt">&nbsp;</div>
+                                  <div class="con">
+                                    <div id=logFlag>${lan['dolog.loginError']}</div>
+                                  </div>
+                                </div>
+                                <div class="item clearfix loginid">
+                                  <div class="nameTxt">${lan['dolog.username']}</div>
+                                  <div class="con">
+                                    <input maxlength="20" id="loginid" name="username" class="text input noime {required:true,messages:{required:'${lan['dolog.requiredUsername']}'}} " type="text">
+                                    <div id="suggestLoginid" style="display: none;"></div>
+                                  </div>
+                                  <div class="tip">
+                                    <div id="loginIdTip" class="no"></div>
+                                  </div>
+                                </div>
+                                <div class="item clearfix" style="height:30px;">
+                                  <div class="nameTxt">${lan['dolog.forgetType']}</div>
+                                  <div class="con">
+                                    <select name="forgetType">
+                                      <option value="1">${lan['dolog.forgetTypeEmail']}</option>
+                                      <option value="2">${lan['dolog.forgetTypeQa']}</option>
+                                    </select>
+                                  </div>
+                                  <div class="tip">
+                                    <div id="loginIdTip" class="no"></div>
+                                  </div>
+                                </div>
+                                <div class="item clearfix" style="display:none;">
+                                  <div class="con" style="padding-left: 72px;margin-bottom: 15px;">
+                                    <div style="margin-bottom:5px;">您的扣扣号是多少？</div>
+                                    <input type="text" class="text input" name="answer" />
+                                  </div>
+                                </div>
+                                <div class="item clearfix password">
+                                  <div class="nameTxt">${lan['valiCode']}</div>
+                                  <div class="con">
+                                    <input type="text" class="text input {required:true,messages:{required:'${lan['requiredValiCode']}'}" name="randCode" maxlength="20" id="randCode" style="width:100px;"><img class="randCode" src="http://www.jihui88.com/veriImg" />
+                                  </div>
+                                  <div class="tip">
+                                    <div class="no" id="passwordTip"></div>
+                                  </div>
+                                </div>
+                                <div class="item aui_buttons" style="position:absolute;bottom:0;width:100%;height:47px;">
+                                  <div class="nameTxt" style="display:none;">
+                                    <font color="red"> </font>
+                                  </div>
+                                  <div class="con " style="text-align: right;padding:8px;">
+                                    <input class="button aui_state_highlight" id="forgetDivSubmit" type="button" value="${lan['submit'] }">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <input id="loginEntId" type="hidden" name="enterpriseId" value="${enterprise.enterpriseId }">
+                          </form>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="aui_footer" colspan="2">
+                        <div class="aui_buttons" style="display: none;"></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </td>
+            <td class="aui_e"></td>
+          </tr>
+          <tr>
+            <td class="aui_sw"></td>
+            <td class="aui_s"></td>
+            <td class="aui_se" style="cursor: se-resize;"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

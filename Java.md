@@ -262,20 +262,30 @@ application-context.xml
 
 ### JdbcTemplate query
 ```java
-String sql = "select count(distinct member_id) from abc_coupongain where coupon_id='" + coupon.getCouponId()
-          + "' group by member_id";
+String sql = "select count(1) as logCount,log.enterprise_id as enterpriseId,submember.name as subMemberName,log.ldesc as memberId from abc_log log left join abc_submember submember on log.ldesc=submember.member_id where log.enterprise_id='"
+        + getCurrentUser().getEnterpriseId()
+        + "' and log.name='员工账号推广' and log.domain='jihui88.com' and log.type='"
+        + (StringUtil.isBlank(type) ? CommonConst.LOGSUBMEMBERPC
+            : type.equals("pc") ? CommonConst.LOGSUBMEMBERPC : CommonConst.LOGSUBMEMBERMOBILE)
+        + "' group by log.ldesc,log.enterprise_id,submember.name";
 
-      Object obj = baseService.query(sql, new ResultSetExtractor<Integer>() {
-        @Override
-        public Integer extractData(ResultSet rs) throws SQLException {
-          Integer count = 0;
-          while (rs.next()) {
-            count += rs.getInt("count");
-          }
-          return count;
+    List<LogResult> list = (List<LogResult>) baseService.query(sql, new ResultSetExtractor<List<LogResult>>() {
+      @Override
+      public List<LogResult> extractData(java.sql.ResultSet rs) throws SQLException, DataAccessException {
+        List<LogResult> list = new ArrayList<LogResult>();
+        while (rs.next()) {
+          LogResult logResult = new LogResult();
+          logResult.setLogCount(rs.getInt("logCount"));
+          logResult.setMemberId(rs.getString("enterpriseId"));
+          AbcSubMember submember = new AbcSubMember();
+          submember.setName(rs.getString("subMemberName"));
+          submember.setMemberId(rs.getString("memberId"));
+          logResult.setSubMember(submember);
+          list.add(logResult);
         }
-
-      });
+        return list;
+      }
+    });
 ```
 ### eclipse 快捷键
 http://www.cnblogs.com/GarfieldTom/p/3682070.html
@@ -406,3 +416,11 @@ Math.round(float f)
 ### @Transient不起作用
 检查下引入的包是否正确
 import javax.persistence.Transient;
+
+### org.springframework.beans.factory.NoSuchBeanDefinitionException: No unique bean of type [org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter] is defined: expected single bean but found 2
+检查ajax跨域请求中是否设置jsonpCallback:'submember',
+
+### StringUtils.leftPad自动补全功能
+```java
+"Member_" + StringUtils.leftPad(subMemberId, 32 - 7 - subMemberId.length(), "0")
+```
