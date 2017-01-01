@@ -424,3 +424,13 @@ import javax.persistence.Transient;
 ```java
 "Member_" + StringUtils.leftPad(subMemberId, 32 - 7 - subMemberId.length(), "0")
 ```
+
+### Proxy操作
+```java
+import com.abbcc.util.Proxy;
+
+String requesturl = WeixinUtil.get_jssdk_jihuinet.replace("APPID", appid).replace("URL", URLEncoder.encode(url, "UTF-8"));
+rxml = new Proxy().get(requesturl, null);
+JSONObject jsonObj = JSONObject.parseObject(rxml);
+
+```
