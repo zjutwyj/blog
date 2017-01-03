@@ -434,3 +434,23 @@ rxml = new Proxy().get(requesturl, null);
 JSONObject jsonObj = JSONObject.parseObject(rxml);
 
 ```
+
+### java单例模式
+```java
+public class StaticSingleton{
+  private StaticSingleton(){
+    System.out.println("StaticSingleton is create");
+  }
+  private static class SingletonHolder{
+    private static StaticSingleton instance = new StaticSingleton();
+  }
+  private static StaticSingleton getInstance(){
+    return SingletonHolder.instance;
+  }
+}
+```
+
+### java代理模式
+```java
+
+```
