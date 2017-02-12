@@ -33,3 +33,9 @@ $ git config --list
 
 ### 图文详解如何利用Git+Github进行团队协作开发
 [http://www.tuicool.com/articles/Bb2aiau](http://www.tuicool.com/articles/Bb2aiau)
+
+### 删除运程分支
+$ git push origin :oauth
+
+### 在本地清除运程没有的分支
+$ git remote prune origin

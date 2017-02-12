@@ -1,4 +1,4 @@
-package guardedsuspension;
+package parallel;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package masterwork;
+package parallel;
 
 import java.util.HashMap;
 import java.util.Map;

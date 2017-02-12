@@ -454,3 +454,5 @@ public class StaticSingleton{
 ```java
 
 ```
+
+### 不能在一个只读模式的事务中执行nextval
