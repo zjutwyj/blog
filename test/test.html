@@ -1,6 +1,73 @@
-<td><span bb-watch="dx:html">{{plus dx 1}}</span></td>
-<td><span bb-watch="desc:html,desc:title" title="{{desc}}">{{cutByte desc 25 end='...'}}<a target="_blank" href="http://admin.jihui88.com/product-detail-{{id2 productId}}.html">[查看详细]</a></span></td>
-<td><a href="javascript:;" bb-click="viewUserInfo">[点击查看详细]</a></td>
-<td><span bb-watch="state:html">{{{integralRecordStatus state}}}</span></td>
-<td><a href="javascript:;" class="btn-complete" bb-click="complete">标记为完成</a>/<a class="btn-cancel" href="javascript:;" bb-click="cancel">标记为取消</a>
-</td>
+<div class="UiFormRadio-wrap" style="padding:10px;">
+  <div class="formPanel form-demo">
+    <div class="anything" style="display: block;">
+      <div class="header">
+        <div id="formIdArea" class="formIdArea">
+          <span class="name">指令：bbaseuiradio="{}"</span>
+          <ul id="formIdComboBox" class="formIdComboBox">
+            <li formid="1488173365180" title="我的表单1488173365180">我的表单1488173365180</li>
+          </ul>
+        </div>
+        <div id="formExcelBtn" class="excelBtn">
+          <span class="formExcelClick"></span>
+        </div>
+      </div>
+      <div class="main">
+        <div class="demo-item clearfix" bb-bbaseuiradio="{viewId:'bbaseuiradio',cur:cur,items:items }"></div>
+      </div>
+      <div class="footer">
+        <div class="demo-item item-type-title clearfix" bb-watch="cur:html">输出结果：{{cur}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="formPanel form-api">
+    <div class="anything">
+      <div class="main">
+        <table class="title">
+          <tbody>
+            <tr>
+              <td>参数</td>
+              <td>说明</td>
+              <td>类型</td>
+              <td>默认值</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="content">
+          <tbody class="uilist01-tbody">
+            <tr>
+              <td class="argName"><span>viewId</span><span class="red">&nbsp;(必填)</span></td>
+              <td class="argDesc"><span>视图标识符</span></td>
+              <td class="argType"><span>string</span></td>
+              <td class="argDefault"><span>-</span></td>
+            </tr>
+            <tr>
+              <td class="argName"><span>cur</span><span class="red">&nbsp;(必填)</span></td>
+              <td class="argDesc"><span>关联模型类字段</span></td>
+              <td class="argType"><span>any</span></td>
+              <td class="argDefault"><span>-</span></td>
+            </tr>
+            <tr>
+              <td class="argName"><span>items</span><span class="red">&nbsp;(必填)</span></td>
+              <td class="argDesc"><span>显示项数组列表</span></td>
+              <td class="argType"><span>array</span></td>
+              <td class="argDefault"><span>-</span></td>
+            </tr>
+            <tr>
+              <td class="argName"><span>onChange</span></td>
+              <td class="argDesc"><span>回调函数</span></td>
+              <td class="argType"><span>function(item, init)</span></td>
+              <td class="argDefault"><span>-</span></td>
+            </tr>
+            <tr>
+              <td class="argName"><span>tpl</span></td>
+              <td class="argDesc"><span>自定义模板</span></td>
+              <td class="argType"><span>string</span></td>
+              <td class="argDefault"><span>-</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

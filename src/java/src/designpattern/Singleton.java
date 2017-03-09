@@ -1,5 +1,11 @@
 package designpattern;
 
+/**
+ * 单例模式
+ * 
+ * @author yongjin
+ *
+ */
 public class Singleton {
 
 	private Singleton() {

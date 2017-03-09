@@ -4,6 +4,12 @@ import module.CglibDbQueryInterceptor;
 import module.IDBQuery;
 import net.sf.cglib.proxy.Enhancer;
 
+/**
+ * cglib代理模式
+ * 
+ * @author yongjin
+ *
+ */
 public class CglibProxy {
 
 	public static IDBQuery createCglibProxy() {
@@ -21,25 +27,24 @@ public class CglibProxy {
 	}
 
 	public static void main(String[] args) {
-		
+
 		IDBQuery d = null;
-		
+
 		long begin = System.currentTimeMillis();
-		
+
 		d = createCglibProxy();
-		
+
 		System.out.println("createCglibProxy:" + (System.currentTimeMillis() - begin));
 
 		System.out.println("cglibProxy class:" + d.getClass().getName());
 
 		begin = System.currentTimeMillis();
-		
+
 		for (int i = 0; i < 30000000; i++) {
 			d.request();
 		}
-		
+
 		System.out.println("callCglibProxy:" + (System.currentTimeMillis() - begin));
-		
 
 	}
 

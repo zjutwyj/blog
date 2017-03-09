@@ -5,6 +5,12 @@ import java.lang.reflect.Proxy;
 import module.IDBQuery;
 import module.JdkDbQreryHandler;
 
+/**
+ * JDK版代理模式
+ * 
+ * @author yongjin
+ *
+ */
 public class JdkProxy {
 
 	public static IDBQuery createJdkProxy() {

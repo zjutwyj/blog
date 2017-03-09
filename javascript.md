@@ -16,7 +16,7 @@
 
 
 ### jsonpCallback is not a function
-```js
+```javascript
 $.ajax({
     url : "http://www.jihui88.com/rest/api/shop/order/product/detail",
     dataType : "jsonp",
@@ -30,7 +30,25 @@ $.ajax({
 [https://flowtype.org/docs/cli.html#_](https://flowtype.org/docs/cli.html#_)
 
 ### replaceAll替换
-```js
+```javascript
 string.replace(/reallyDo/g, replaceWith);
 string.replace(new RegExp(reallyDo, 'g'), replaceWith);
 ```
+### 网站打开速度分析工具
+- GTmetrix 用来衡量网页速度， 网址：[https://gtmetrix.com/](https://gtmetrix.com/);
+- webpagetest 用来分析你的资源，网址：[http://www.webpagetest.org/](http://www.webpagetest.org/);
+- PageSpeed Insights 为你的网站生成有关如何 优化CRP的提示， 谷歌的一个插件<br>
+
+### 音频播放问题
+```javascript
+ if (audioPlayer) {
+    audioPlayer.pause();
+    var playPromise = audioPlayer.play();
+
+    if (playPromise !== null) {
+      playPromise.catch(function () {
+        audioPlayer.play();
+      });
+    }
+ };
+ ```

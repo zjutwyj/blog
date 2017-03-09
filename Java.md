@@ -423,6 +423,7 @@ import javax.persistence.Transient;
 ### StringUtils.leftPad自动补全功能
 ```java
 "Member_" + StringUtils.leftPad(subMemberId, 32 - 7 - subMemberId.length(), "0")
+String id2 = productId.replaceAll("^[^1-9]+", "");
 ```
 
 ### Proxy操作
@@ -456,3 +457,18 @@ public class StaticSingleton{
 ```
 
 ### 不能在一个只读模式的事务中执行nextval
+
+
+### 查询方法调用者方法
+```java
+Thread.currentThread().getStackTrace()[1]是你当前方法执行堆栈
+Thread.currentThread().getStackTrace()[2]就是上一级的方法堆栈 以此类推
+Thread.currentThread().getStackTrace()[3].getClassName();
+```
+
+### Java——对象克隆（复制）
+[http://www.cnblogs.com/Qian123/p/5710533.html](http://www.cnblogs.com/Qian123/p/5710533.html)
+
+### tomcat虚拟内存设置
+放在 if ($have_tty -eq 1 ); then 下面一行
+JAVA_OPTS="$JAVA_OPTS -server -XX:PermSize=512M -XX:MaxPermSize=1024m"
