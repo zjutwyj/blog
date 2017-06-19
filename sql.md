@@ -78,9 +78,14 @@ WHERE
 ```sql
 alter user postgres with password 'new password';
 ```
+### 查询某个字段中是否包含字符串
+select count(*) as 使用次数, abc_log.name as 功能名称 from abc_log where abc_log.type <>'04' and position('Enterp_' in name)=0 group by abc_log.name   order by 使用次数 desc  LIMIT 100
 
 
+mysql用 locate('Enterp_', name);
 
+### 查询数据库连接数情况
+select * from pg_stat_activity order by query_start desc
 
 
 

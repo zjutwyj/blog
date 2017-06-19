@@ -39,3 +39,16 @@ $ git push origin :oauth
 
 ### 在本地清除运程没有的分支
 $ git remote prune origin
+
+### error: pathspec 'origin/test' did not match any file(s) known to git.
+解决方法：
+1、执行命令git fetch取回所有分支的更新
+
+2、执行git branch -a可以看到test分支（已经更新分支信息）
+
+3、切换分支git checkout test
+
+
+### git add忽略某些文件的方法
+命令：Git update-index --assume-unchanged FILENAME       路径+文件名
+若以后不想忽略该文件的修改，则输入命令：git update-index --no-assume-unchanged FILENAME

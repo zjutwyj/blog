@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>【js数据结构】可逐次添加叶子的二叉树（非最优二叉树）http://www.tuicool.com/articles/qQRvaii</title>
+</head>
+<body>
+    <script>
+function Node(ele, left, right){
+    this.element = ele;
+    this.left = left;
+    this.right  = right;
+    this.show = show;
+}
+function show(){
+    console.log(this.element);
+}
+function BinaryTree(){
+    this.root = null;
+    this.addNode = addNode;
+    this.showTree = showTree;
+    this.showLevel = showLevel;
+}
+
+function addNode(ele){
+    var n = new Node(ele, null, null);
+    var Que = [];
+    if(this.root == null)
+    {
+        this.root = n;
+    }
+    else {
+        var curr = this.root;
+        Que.push(curr);
+    }
+    while(Que.length>0)
+    {
+        curr = Que.shift();
+        if(curr.left != null && curr.right != null)
+        {
+            Que.push(curr.left);
+            Que.push(curr.right);
+        }
+        else if(curr.left == null )
+        {
+            curr.left = n;
+            break;
+        }
+        else if(curr.right == null)
+        {
+            curr.right = n;
+            break;
+        }
+    }
+
+}
+
+function showTree(node){
+    if(!(node == null))
+    {
+        node.show();
+        showTree(node.left);
+        showTree(node.right);
+    }
+}
+
+function showLevel(node)
+{
+    var queue = [];
+    var curr;
+    if(this.root != null)
+    {
+        queue.push(this.root)
+    }
+    while(queue.length>0)
+    {
+        curr = queue.shift();
+        console.info(curr.element)
+        if(curr.left != null && curr.right != null)
+        {
+            queue.push(curr.left);
+            queue.push(curr.right);
+        }
+        else if(curr.left == null )
+        {
+            continue;
+        }
+        else if(curr.right == null)
+        {
+            queue.push(curr.left);
+            continue;
+        }
+    }
+}
+
+
+var Tree = new BinaryTree();
+Tree.addNode(1)
+Tree.addNode(2)
+Tree.addNode(3)
+Tree.addNode(4)
+Tree.addNode(5)
+Tree.addNode(6)
+Tree.addNode(7)
+showTree(Tree.root)
+Tree.showLevel(Tree.root)
+
+    </script>
+</body>
+</html>

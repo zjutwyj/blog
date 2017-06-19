@@ -422,7 +422,7 @@ import javax.persistence.Transient;
 
 ### StringUtils.leftPad自动补全功能
 ```java
-"Member_" + StringUtils.leftPad(subMemberId, 32 - 7 - subMemberId.length(), "0")
+"Product_" + StringUtils.leftPad(proId, 32 - "Product_".length(), "0")
 String id2 = productId.replaceAll("^[^1-9]+", "");
 ```
 
@@ -472,3 +472,44 @@ Thread.currentThread().getStackTrace()[3].getClassName();
 ### tomcat虚拟内存设置
 放在 if ($have_tty -eq 1 ); then 下面一行
 JAVA_OPTS="$JAVA_OPTS -server -XX:PermSize=512M -XX:MaxPermSize=1024m"
+
+### Property 'XXX' not found on type java.lang.String解决方案
+[http://www.cnblogs.com/flywang/p/5812759.html](http://www.cnblogs.com/flywang/p/5812759.html)
+
+### <c:forEach 遍历list中的map对象
+```java
+<c:forEach items="${priceList}" var="price">
+    <c:forEach items="${price}" var="mp">
+        ${mp.key} : ${mp.value}
+    </c:forEach>
+</c:forEach>
+```
+
+### freemarker格式化
+${xx?string} //字符串
+[http://blog.sina.com.cn/s/blog_3e3779c10100emst.html](http://blog.sina.com.cn/s/blog_3e3779c10100emst.html)
+
+### freemarker map遍历
+```html
+<#assign map = userinfo.map>
+<#list map?keys as key>
+   ${key}   ------   ${map[key]}
+</option>
+</#list>
+```
+### [com.caucho.services.server.ServiceContext@5384a3e4]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak
+删除tomcat服务，重新添加即可解决
+
+### jar包搜索
+http://www.findjar.com/index.x
+
+### idea 配置tomcat server
+[https://segmentfault.com/q/1010000002419203](https://segmentfault.com/q/1010000002419203)
+
+### maven中net.sf.json报错的解决方法
+[http://www.cnblogs.com/winner-0715/p/5928514.html](http://www.cnblogs.com/winner-0715/p/5928514.html)
+
+### idea 热部署
+第一步配置tomcat的deplotement里面要选择xxx.war exploded而不是xxx.war。如果是xxx.war的童鞋，请移除再加入xxx.war exploded。
+第二步配置：在tomcat的server里面on update action和on frame deactivation都选择update classes and resources就行了。
+第三步：下载插件Jrebel 参考网址：http://www.cnblogs.com/hongdada/p/5765753.html

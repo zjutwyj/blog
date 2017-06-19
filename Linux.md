@@ -38,3 +38,6 @@ cat /proc/version
 
 ### ubuntu下使用haproxy做tcp 层的负载均衡
 http://www.cnblogs.com/junw_china/archive/2011/03/22/1991167.html
+
+### 面试你必须懂的bash shell之25问
+[点击查看详细](http://www.tuicool.com/articles/vuQbM3v)
