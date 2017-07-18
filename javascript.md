@@ -1,4 +1,4 @@
-### 第三方插件
+### 第三方插件 - 2017.01.08
 [对话框(artDialog_v6)](http://aui.github.io/artDialog/doc/index.html) ["dialog-plus"]<br>
 [代码编辑器(codemirror)](http://codemirror.net/) ["CodeMirror"]<br>
 [滚动条(isroll)](http://iscrolljs.com/) ["IScroll"]<br>
@@ -15,7 +15,7 @@
 [图片相册(PhotoSwipe)](http://photoswipe.com)<br>
 
 
-### jsonpCallback is not a function
+### jsonpCallback is not a function - 2017.01.22
 ```javascript
 $.ajax({
     url : "http://www.jihui88.com/rest/api/shop/order/product/detail",
@@ -26,20 +26,20 @@ $.ajax({
       productId : productId
     }});
 ```
-### facebook flow 静态类型检查
+### facebook flow 静态类型检查 - 2017.01.28
 [https://flowtype.org/docs/cli.html#_](https://flowtype.org/docs/cli.html#_)
 
-### replaceAll替换
+### replaceAll替换 - 2017.02.12
 ```javascript
 string.replace(/reallyDo/g, replaceWith);
 string.replace(new RegExp(reallyDo, 'g'), replaceWith);
 ```
-### 网站打开速度分析工具
+### 网站打开速度分析工具 - 2017.02.25
 - GTmetrix 用来衡量网页速度， 网址：[https://gtmetrix.com/](https://gtmetrix.com/);
 - webpagetest 用来分析你的资源，网址：[http://www.webpagetest.org/](http://www.webpagetest.org/);
 - PageSpeed Insights 为你的网站生成有关如何 优化CRP的提示， 谷歌的一个插件<br>
 
-### 音频播放问题
+### 音频播放问题 - 2017.03.09
 ```javascript
  if (audioPlayer) {
     audioPlayer.pause();
@@ -52,3 +52,6 @@ string.replace(new RegExp(reallyDo, 'g'), replaceWith);
     }
  };
  ```
+
+### backbone跨域设置 - 2017.05.03
+[https://stackoverflow.com/questions/29616494/backbone-jsonp-call-from-restful-json-api-not-working](https://stackoverflow.com/questions/29616494/backbone-jsonp-call-from-restful-json-api-not-working)

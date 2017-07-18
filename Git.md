@@ -1,10 +1,10 @@
-### 无法克隆，提示SSL错误
+### 无法克隆，提示SSL错误 - 2017.01.24
 git config --global http.sslVerify false
 
-### 设置代理
+### 设置代理 - 2017.02.29
 git config --global http.proxy "127.0.0.1:8087"
 
-### git 本地分支的新建与合并
+### git 本地分支的新建与合并 - 2017.03.24
 >$ git checkout -b iss53 (git branch 分支名)    // 创建自己的分支(比如开发一个新的功能)
 $ git commit -a -m 'added a new footer [issue 53]' // 提交到本地仓库
 
@@ -25,22 +25,22 @@ $ git branch -d iss53        // 删除分支
 
 >$ git push origin            // 最后提交到运程服务器上
 
-### 版本号
+### 版本号 - 2017.04.10
 1.0.1  第1位：大版本升级，第2位：新功能添加，第3位：BUG修复
 
-### 查看 git global config
+### 查看 git global config - 2017.04.15
 $ git config --list
 
-### 图文详解如何利用Git+Github进行团队协作开发
+### 图文详解如何利用Git+Github进行团队协作开发 - 2017.04.23
 [http://www.tuicool.com/articles/Bb2aiau](http://www.tuicool.com/articles/Bb2aiau)
 
-### 删除运程分支
+### 删除运程分支 - 2017.05.10
 $ git push origin :oauth
 
-### 在本地清除运程没有的分支
+### 在本地清除运程没有的分支 - 2017.05.18
 $ git remote prune origin
 
-### error: pathspec 'origin/test' did not match any file(s) known to git.
+### error: pathspec 'origin/test' did not match any file(s) known to git. - 2017.06.11
 解决方法：
 1、执行命令git fetch取回所有分支的更新
 
@@ -49,6 +49,6 @@ $ git remote prune origin
 3、切换分支git checkout test
 
 
-### git add忽略某些文件的方法
+### git add忽略某些文件的方法 - 2017.06.14
 命令：Git update-index --assume-unchanged FILENAME       路径+文件名
 若以后不想忽略该文件的修改，则输入命令：git update-index --no-assume-unchanged FILENAME

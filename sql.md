@@ -1,37 +1,37 @@
-### postgresql 运程访问
+### postgresql 运程访问 - 2016.05.12
 pg_hba.conf -> host  all    all    192.168.0.0/24    md5
 postgresql.conf -> listen_addresses = '*' # what IP address(es) to listen on;
 
-### postgresql 连线被拒，请检查主机名称和埠号，并确定 postmaster 可以接受 TCP/IP 连线
+### postgresql 连线被拒，请检查主机名称和埠号，并确定 postmaster 可以接受 TCP/IP 连线 - 2016.06.24
 这主要是由于用户密码认证方式引起的，Postgresql数据库安装好后默认采用md5密码加密认证方式。
 pg_hba.conf -> host all all    0.0.0.0/0    md5
 postgresql.conf -> listen_addresses = '*' # what IP address(es) to listen on;
 安装jdbc驱动 (程序 -> PostgreSQL -> Application Stack Builder -> Database Driders(全部安装))
 重启服务start server
 
-### psql数据恢复
+### psql数据恢复 - 2016.07.15
 C:\Program Files\PostgreSQL\9.3\bin>psql -h localhost -U postgres -d abbccen -f "C:\Users\yongjin\Desktop\abbccen20160325.dmp"
 
-### mysql 运程访问
+### mysql 运程访问 - 2016.08.04
 MySql Workbench -> GRANT ALL ON jihui88_mobile.* TO root@'192.168.0.102' IDENTIFIED BY '123456'
 
-### mysql 创建用户
+### mysql 创建用户 - 2016.09.10
 create user 'root'@'localhost' identified by '你的密码';
 grant all privileges on *.* to root@'localhost';
 
-### mysql 删除用户
+### mysql 删除用户 - 2016.09.27
 drop user root@'%';
 
-### PostgreSQL 替换字符串方法及字符串操作函数
+### PostgreSQL 替换字符串方法及字符串操作函数 - 2016.10.04
 update ab set a=replace(a,'aaa','0') 把a字段里面的‘aaa’字符串替换成0
 [其它相关函数](http://www.jsjtt.com/shujuku/postgresql/29.html)
 
-### sql 单表distinct/多表group by查询去除重复记录
+### sql 单表distinct/多表group by查询去除重复记录 - 2016.10.18
 ```sql
 select count(distinct member_id) from abc_coupongain where coupon_id='Coupon_0000000000000000000000542' group by member_id
 ```
 
-### hibernate 常用注解
+### hibernate 常用注解 - 2016.11.10
 >@Entity              --注释声明该类为持久类。将一个Javabean类声明为一 个实体的数据库表映射类,最好实现序列化.此时,默认情况下,所有的类属性都为映射到数据表的持久性字段.若在类中,添加另外属性,而非映射来数据库的, 要用下面的Transient来注解.
 
 >@Table(name="promotion_info")      --持久性映射的表(表名="promotion_info).@Table是类一级的注解,定义在@Entity下,为实体bean映射表,目录和schema的名字,默认为实体bean的类名,不带包名.
@@ -52,15 +52,15 @@ select count(distinct member_id) from abc_coupongain where coupon_id='Coupon_000
 [http://www.cnblogs.com/younggun/archive/2013/05/19/3086659.html](详见)
 
 
-### 解决hibernate无法赋值实体类问题
+### 解决hibernate无法赋值实体类问题 - 2016.12.27
 ```java
 PaginationSupport pagin = productService.findPageByCriteria(dc, pageSize, startIndex,
         CriteriaSpecification.ROOT_ENTITY);
 ```
-### Column 'id' in field list is ambiguous
+### Column 'id' in field list is ambiguous - 2017.01.03
 列'ID'在字段列表中重复，其实就是两张表有相同的字段，但是使用时表字段的名称前没有加表名，导致指代不明
 
-### 转发排行前50名
+### 转发排行前50名 - 2017.01.13
 ```sql
 SELECT
   count(1) AS logCount,
@@ -74,19 +74,21 @@ WHERE
   wcd_id ='2314' group by belong_id order by logCount desc limit 50
 ```
 
-### 修改数据库密码
+### 修改数据库密码  - 2017.02.26
 ```sql
 alter user postgres with password 'new password';
 ```
-### 查询某个字段中是否包含字符串
+### 查询某个字段中是否包含字符串 - 2017.03.24
 select count(*) as 使用次数, abc_log.name as 功能名称 from abc_log where abc_log.type <>'04' and position('Enterp_' in name)=0 group by abc_log.name   order by 使用次数 desc  LIMIT 100
 
 
 mysql用 locate('Enterp_', name);
 
-### 查询数据库连接数情况
+### 查询数据库连接数情况 - 2017.04.08
 select * from pg_stat_activity order by query_start desc
 
+### Postgresql查询时不区分大小写 - 2017.05.06
+[http://www.cnblogs.com/my--blog-/p/5347989.html](http://www.cnblogs.com/my--blog-/p/5347989.html)
 
-
-
+### mysql用navicat导入psc数据为空 - 2017.07.18
+[http://www.aiisen.com/mysql-import-psc-zh.html](http://www.aiisen.com/mysql-import-psc-zh.html)
