@@ -1,5 +1,14 @@
-<div data-type="PhotoUnit" data-unitid="Unit-001" class="PhotoUnit dragable unit-section unit-group ui-draggable ui-draggable-handle" style="position: absolute; left: 58.125%; top: 54.4819%; z-index: 1002; display: block; opacity: 1; width: 14.6875%; height: 15.9533%; right: auto; bottom: auto;" id="unit-13Q1500220324825" data-zindex="1002">
-    <div class="unit-wrap ui-resizable" style="width: 100%; height: 100%; top: 0px; left: 0px;">
-        <div class="unit-cont" style="background-image: url(&quot;http://img.leminchou.com/wcd/upload/029/2017/07/16/33f56435-b7f1-4cd5-b3ad-9c9773eda0ed.png&quot;); background-size: contain; background-position: center center; background-repeat: no-repeat; animation-name: fadeInUp; opacity: 0; animation-duration: 2s; animation-timing-function: ease; animation-delay: 0s; animation-iteration-count: infinite; animation-direction: initial; transform-origin: initial; animation-fill-mode: forwards;-webkit-animation-name:fadeInUp-webkit-animation-duration:2s-webkit-animation-timing-function:ease-webkit-animation-delay:0s-webkit-animation-iteration-count:infinite-webkit-animation-direction:initial-webkit-transform-origin:initial-webkit-animation-fill-mode:forwards" data-stopanimate="00"><img width="100%" height="100%;" style="opacity:0;" src="http://img.leminchou.com/wcd/upload/029/2017/07/16/33f56435-b7f1-4cd5-b3ad-9c9773eda0ed.png"></div>
-    </div>
-</div>
+${command.pieceNavList(laymod)}
+<ul>
+    <c:forEach items="${navList}" var="nav" varStatus="s">
+        <li><a class="menu-site-item menu-site-item-${s.index}" href="${nav.args.linkUrl}">${nav.name}</a> 子导航数量${nav.sonList.size()}
+            <c:if test="${nav.sonList.size() > 0}">
+                <ul class="son-list">
+                    <c:forEach items="${nav.sonList}" var="sonnav" varStatus="ss">
+                        <a class="menu-site-item menu-site-item-${ss.index}" href="${sonnav.args.linkUrl}">${sonnav.name}</a>
+                    </c:forEach>
+                </ul>
+            </c:if>
+        </li>
+    </c:forEach>
+</ul>

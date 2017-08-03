@@ -531,3 +531,60 @@ http://www.findjar.com/index.x
   </dl>
 </#if>
 ```
+
+### String数组转List，List转String数组 - 2017.07.21
+
+List 转换为 String数组
+```java
+List<String> list = new ArrayList<String>();
+list.add("a1");
+list.add("a2");
+String[] toBeStored = list.toArray(new String[list.size()]);
+for(String s : toBeStored) {
+     System.out.println(s);
+}
+```
+
+String 数组转换为 List
+```java
+String[] arr = new String[] {"1", "2"};
+List list = Arrays.asList(arr);
+```
+
+### 将字符数组转换成字符串,以逗号分割 - 2017.07.22
+```java
+String[] ary = new String[]{"a", "b"}
+org.apache.commons.lang.StringUtils.join(ary, ',');
+==> "a,b"
+```
+
+### TreeSet 排序- 2017.07.26
+```java
+Set<CartItem> newItem = new TreeSet(new Comparator<CartItem>() {
+      @Override
+      public int compare(CartItem item1, CartItem item2){
+        return item1.getAddTime().getTime() - item2.getAddTime().getTime() > 0 ? 1 : -1;
+      }
+    });
+```
+
+### 订单30分钟后自动处理 - 2017.07.28
+[https://github.com/ouqiang/delay-queue](https://github.com/ouqiang/delay-queue)
+
+### java处理子级 - 2017.08.02
+```java
+private void setSubNavigateList(Navigator rootNav, List<Navigator> listAll){
+    List<Navigator> subList = new ArrayList<Navigator>();
+    for(Navigator nav : listAll){
+      if (String.valueOf(rootNav.getId()).equals(String.valueOf(nav.getParentId()))){
+        for(Navigator sub : listAll){
+          if (nav.getId().equals(sub.getParentId())){
+            setSubNavigateList(nav, listAll);
+          }
+        }
+        subList.add(nav);
+      }
+    }
+    rootNav.setSonList(subList);;
+  }
+```

@@ -90,5 +90,12 @@ select * from pg_stat_activity order by query_start desc
 ### Postgresql查询时不区分大小写 - 2017.05.06
 [http://www.cnblogs.com/my--blog-/p/5347989.html](http://www.cnblogs.com/my--blog-/p/5347989.html)
 
+### mysql 查询配置 - 2017.07.18
+show VARIABLES like '%max_allowed_packet%';
+
+### Navicat for MySQL 数据库还原 - 2017.07.18
+[https://zhidao.baidu.com/question/497665171.html](https://zhidao.baidu.com/question/497665171.html)
+
 ### mysql用navicat导入psc数据为空 - 2017.07.18
 [http://www.aiisen.com/mysql-import-psc-zh.html](http://www.aiisen.com/mysql-import-psc-zh.html)
+
