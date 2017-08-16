@@ -588,3 +588,13 @@ private void setSubNavigateList(Navigator rootNav, List<Navigator> listAll){
     rootNav.setSonList(subList);;
   }
 ```
+
+### 格式化number
+
+```java
+pd.put("price", SystemConfigUtil.getOrderScaleBigDecimal(new BigDecimal(_getString(pd, "price"))));
+```
+
+### java excel中插入图片
+
+[http://blog.csdn.net/chenssy/article/details/20524563](http://blog.csdn.net/chenssy/article/details/20524563)

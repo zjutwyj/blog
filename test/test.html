@@ -1,14 +1,241 @@
-${command.pieceNavList(laymod)}
-<ul>
-    <c:forEach items="${navList}" var="nav" varStatus="s">
-        <li><a class="menu-site-item menu-site-item-${s.index}" href="${nav.args.linkUrl}">${nav.name}</a> 子导航数量${nav.sonList.size()}
-            <c:if test="${nav.sonList.size() > 0}">
-                <ul class="son-list">
-                    <c:forEach items="${nav.sonList}" var="sonnav" varStatus="ss">
-                        <a class="menu-site-item menu-site-item-${ss.index}" href="${sonnav.args.linkUrl}">${sonnav.name}</a>
-                    </c:forEach>
-                </ul>
-            </c:if>
-        </li>
-    </c:forEach>
-</ul>
+${command.pieceNewsList(laymod, 1, 5, true, true)}
+<div id="lq_news" data-edit="{name:'新闻选择', field:'newsList', type:'news_list',reload:true}">
+  <div class="content">
+    <div class="news_list">
+      <ul>
+        <c:forEach items="${newsList}" var="news" varStatus="newslist">
+          <li data-id="${news.id2}" class="news_list news_list_${newslist.index}">
+            <a class="news_detail" href="nd?itemId=${news.news_id}">
+              <div class="news_pic">
+                <img src="http://img.jihui88.com/${news.pic_path}" alt="${news.title}" />
+                <div class="news_mark"></div>
+              </div>
+              <div class="news_cont">
+                <span class="news_addtime">
+                  <span class="year">
+                    <fmt:formatDate pattern="yyyy" value="${news.add_time}" />
+                  </span>
+                  <span class="md">
+                    <fmt:formatDate pattern="MM-dd" value="${news.add_time}" />
+                  </span>
+                </span>
+                <div class="news_infor">
+                  <span class="news_name">${news.title}</span>
+                  <span class="news_txt">${fn:substring(news.content, 0, 60)}</span>
+                </div>
+              </div>
+            </a>
+            <a class="news_more" href="nd?itemId=${news.news_id}"> <em class="news_jt iconfontyyy"></em>
+            </a>
+          </li>
+        </c:forEach>
+      </ul>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!-- 分页展示 -->
+<div id="lq_newpage">
+<div class="pagenation">
+  <div class="pagePrev icon-pagePrev icon-cnListP <c:if test="${currentPage==1}">pageDisable</c:if>">
+    <a hidefocus="true" class="danaiPageUp" href="${prevString}">上一页</a>
+  </div>
+  <div class="pagenationSelectDiv">
+      <c:forEach items="${selectHrefList}" var="h" varStatus="hs">
+      <a class="pageOptions <c:if test="${hs.index+1== currentPage}">currentnum</c:if>" href="${h}">${hs.index+1}</a>
+      </c:forEach>
+  </div>
+  <div class="pageNext icon-pageNext icon-cnListN <c:if test=" ${currentPage==roductList.pageCount || pageCount==0} ">pageDisable</c:if>">
+    <a hidefocus="true" class="danaiPageDown" href="${nextString}">下一页</a>
+  </div>
+</div>
+  </div>
+
+
+
+  @font-face {
+  font-family: 'iconfont';  /* project id 381718 */
+  src: url('//at.alicdn.com/t/font_381718_krtj0ilup550o1or.eot');
+  src: url('//at.alicdn.com/t/font_381718_krtj0ilup550o1or.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_381718_krtj0ilup550o1or.woff') format('woff'),
+  url('//at.alicdn.com/t/font_381718_krtj0ilup550o1or.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_381718_krtj0ilup550o1or.svg#iconfont') format('svg');
+}
+.iconfontyyy {
+    font-family:"iconfont" !important;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+#lq_news{
+    width:1170px;
+    margin:0 auto;
+    position:relative;
+/*     padding-top:120px; */
+}
+#lq_news .content{
+
+}
+#lq_news .content ul li.news_list{
+    transition: all .36s ease;
+    position: relative;
+    padding: 30px 0;
+    border-bottom: 1px solid #e5e5e5;
+    height: 142px;
+    overflow: hidden;
+    list-style:none;
+}
+#lq_news .content ul li.news_list:hover{
+    padding-left: 20px;
+    box-shadow: 0 8px 35px rgba(0,0,0,.08);
+}
+#lq_news .content ul li .news_pic{
+    width:340px;
+    height:142px;
+    float:left;
+    overflow:hidden;
+}
+#lq_news .content ul li .news_pic img{
+    height:100%;
+    width:auto;
+}
+#lq_news .content ul li .news_cont{
+    transition: all .36s ease;
+    float: right;
+    width: 785px;
+    box-sizing:border-box;
+}
+#lq_news .content ul li.news_list:hover .news_cont{
+    padding-left:20px;
+}
+#lq_news .content ul li .news_cont .news_addtime{
+    position: absolute;
+    top: 55px;
+    right: 27px;
+    color:#999;
+}
+#lq_news .content ul li .news_cont .news_addtime .year{
+    display:none;
+}
+#lq_news .content ul li .news_cont .news_addtime .md{
+    display:block;
+    font-family:"Arial";
+    font-size: 22px;
+    line-height: 30px;
+}
+
+#lq_news .content ul li.news_list:hover .news_addtime .md{
+    color:#303030;
+}
+#lq_news .content ul li .news_cont .news_infor{
+    width: 600px;
+    padding-top: 23px;
+}
+#lq_news .content ul li .news_cont .news_name{
+    font-size: 16px;
+    line-height: 30px;
+    color: #303030;
+    display:block;
+}
+#lq_news .content ul li.news_list:hover .news_name{
+    color:#303030;
+}
+#lq_news .content ul li .news_cont .news_txt{
+    width: 600px;
+    padding-top: 11px;
+    font-size: 13px;
+    line-height: 26px;
+    height: 52px;
+    overflow: hidden;
+    color: #888;
+    display: block;
+    box-sizing: content-box;
+}
+#lq_news .content ul li .news_more{
+    position: absolute;
+    width: 56px;
+    top: 135px;
+    right: 27px;
+    height: 26px;
+    border-left: 1px solid #e5e5e5;
+    color: transparent;
+    overflow:hidden;
+}
+#lq_news .content ul li .news_jt{
+    position:relative;
+}
+#lq_news .content ul li .news_jt:before{
+    content: "\e643";
+    display:block;
+    position: absolute;
+    top: 50%;
+    left:15px;
+    color: #ccc;
+    font-size: 20px;
+/*     -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); */
+    font-family:"iconfont" !important;
+    transition:all 0.5s;
+    -moz-transition:all 0.5s;
+    -webkit-transition:all 0.5s;
+    -o-transition:all 0.5s;
+}
+#lq_news .content ul li:hover .news_jt:before{
+    left:100px;
+}
+#lq_news .content ul li .news_jt:after{
+    content: "\e643";
+    display:block;
+    position: absolute;
+    top: 50%;
+    left:-30px;
+    color: #ccc;
+    font-size: 20px;
+/*     -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); */
+    font-family:"iconfont" !important;
+    opacity: 0;
+    -moz-opacity: 0;
+    filter: alpha(opacity=0);
+    transition:all 0.5s;
+    -moz-transition:all 0.5s;
+    -webkit-transition:all 0.5s;
+    -o-transition:all 0.5s;
+}
+#lq_news .content ul li:hover .news_jt:after{
+    left:15px;
+    opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=100);
+
+}
+/*页码*/
+#lq_newpage{
+    width:1200px;
+    margin:0 auto;
+    height: 24px;
+    padding: 20px 0 60px;
+}
+#lq_newpage .icon-pagePrev,#lq_newpage .icon-pageNext{
+    display:none;
+}
+#lq_newpage .pagenationSelectDiv a{
+    color:#999;
+    text-decoration: none;
+    width: 26px;
+    height: 26px;
+    display: block;
+    line-height: 24px;
+    text-align: center;
+    font-family: Arial;
+    float: left;
+    margin-right: 5px;
+    transition: all .2s ease-out;
+    text-decoration: none;
+}
+#lq_newpage .pagenationSelectDiv a.currentnum{
+    color:#233876;
+}
