@@ -99,3 +99,43 @@ show VARIABLES like '%max_allowed_packet%';
 ### mysql用navicat导入psc数据为空 - 2017.07.18
 [http://www.aiisen.com/mysql-import-psc-zh.html](http://www.aiisen.com/mysql-import-psc-zh.html)
 
+
+### pg 创建函数
+```sql
+CREATE OR REPLACE FUNCTION createSeqId(text, text)
+RETURNS text AS
+$BODY$
+DECLARE
+t text;
+i int;
+j int;
+n int;
+BEGIN
+n=nextval($2);
+i=32-character_length($1)-character_length(n||'');
+j=1;
+t='';
+for j IN 1..i loop
+T = T||'0';
+END loop ;
+t = $1 || t||n;
+RETURN t;
+END;
+$BODY$
+LANGUAGE 'plpgsql' VOLATILE;
+```
+
+### postgresql 字符串转化为数字类型排序 - 2017.08.25
+```sql
+SELECT sell FROM abc_product WHERE enterprise_id = '' ORDER BY to_number(sell, '999999999') desc
+```
+
+### postgresql null 排序问题 - 2017.08.25
+```sql
+SELECT sell FROM abc_product WHERE enterprise_id = ''ORDER BY (sell IS not NULL), sell asc
+```
+
+### postgresql 去除重复数据 - 2017.08.28
+```sql
+select * from abc_news where  news_id  in (select min(news_id) from abc_news where category='Category_00000000000000000344331' group by sort) order by sort desc
+```

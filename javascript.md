@@ -247,3 +247,26 @@ function orderUnitCurrencyFormat(price) {
     return jihui88.currencySign + price + jihui88.currencyUnit;
 }
 ```
+
+### 各种框架spa案例 - 2017.08.16
+
+[react版饿了么](https://github.com/chenjinxinlove/react-elm)
+[vue版饿了么](https://github.com/bailicangdu/vue2-elm)
+[基于 react-native 构建一个模拟外卖平台的原生APP](https://github.com/bailicangdu/RN-elm)
+[vue + element-ui 构建的后台管理系统](https://github.com/bailicangdu/vue2-manage)
+
+
+### 使用iScroll时input复选框不能绑定click事件解决方法 - 2017.08.19
+[http://blog.csdn.net/xw505501936/article/details/51886018](http://blog.csdn.net/xw505501936/article/details/51886018)
+
+### 数组去重 - 2017.08.23
+```js
+function unique(arr){
+    var set = new Set(arr);
+    return Array.from(set);
+}
+```
+
+### npm 升级后提示npm: 3.10.8 should be >= 4.0.0
+
+[http://www.cnblogs.com/webph/p/6261727.html](http://www.cnblogs.com/webph/p/6261727.html)

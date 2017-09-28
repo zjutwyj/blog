@@ -52,3 +52,24 @@ $ git remote prune origin
 ### git add忽略某些文件的方法 - 2017.06.14
 命令：Git update-index --assume-unchanged FILENAME       路径+文件名
 若以后不想忽略该文件的修改，则输入命令：git update-index --no-assume-unchanged FILENAME
+
+### 推送本地文件到运程仓库 - 2017.09.23
+Git 全局设置:
+git config --global user.name "wangyj"
+git config --global user.email "zjut_wyj@163.com"
+
+创建 git 仓库:
+$ mkdir spring-data-jpa
+$ cd spring-data-jpa
+$ git init
+$ touch README.md
+$ git add README.md
+$ git commit -m "first commit"
+$ git remote add origin https://gitee.com/zjutwyj/spring-data-jpa.git
+$ git push -u origin master
+
+已有项目?
+$ cd existing_git_repo
+$ git remote add origin https://gitee.com/zjutwyj/spring-data-jpa.git
+$ git push -u origin master
+

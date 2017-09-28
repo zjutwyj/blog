@@ -589,12 +589,125 @@ private void setSubNavigateList(Navigator rootNav, List<Navigator> listAll){
   }
 ```
 
-### 格式化number
+### 格式化number - 2017.08.10
 
 ```java
 pd.put("price", SystemConfigUtil.getOrderScaleBigDecimal(new BigDecimal(_getString(pd, "price"))));
 ```
 
-### java excel中插入图片
+### java excel中插入图片 - 2017.08.12
 
 [http://blog.csdn.net/chenssy/article/details/20524563](http://blog.csdn.net/chenssy/article/details/20524563)
+
+### Java 开发手册 - 2017.08.16
+
+>8. 【强制】POJO 类中布尔类型的变量，都不要加 is，否则部分框架解析会引起序列化错误。
+反例：定义为基本数据类型 Boolean isDeleted；的属性，它的方法也是 isDeleted()，RPC
+阿里巴巴 Java 开发手册
+ ——禁止用于商业用途，违者必究—— 2 / 33
+框架在反向解析的时候，“以为”对应的属性名称是 deleted，导致属性获取不到，进而抛出异
+常。
+
+>11. 【推荐】如果使用到了设计模式，建议在类名中体现出具体模式。
+说明：将设计模式体现在名字中，有利于阅读者快速理解架构设计思想。
+正例：public class OrderFactory;
+public class LoginProxy;
+public class ResourceObserver;
+
+>14. 【参考】枚举类名建议带上 Enum 后缀，枚举成员名称需要全大写，单词间用下划线隔开。
+说明：枚举其实就是特殊的常量类，且构造方法被默认强制是私有。
+正例：枚举名字：DealStatusEnum，成员名称：SUCCESS / UNKOWN_REASON。
+
+>15. 【参考】各层命名规约：
+A) Service/DAO 层方法命名规约
+1） 获取单个对象的方法用 get 做前缀。
+阿里巴巴 Java 开发手册
+ ——禁止用于商业用途，违者必究—— 3 / 33
+2） 获取多个对象的方法用 list 做前缀。
+3） 获取统计值的方法用 count 做前缀。
+4） 插入的方法用 save（推荐）或 insert 做前缀。
+5） 删除的方法用 remove（推荐）或 delete 做前缀。
+6） 修改的方法用 update 做前缀。
+B) 领域模型命名规约
+1） 数据对象：xxxDO，xxx 即为数据表名。
+2） 数据传输对象：xxxDTO，xxx 为业务领域相关的名称。
+3） 展示对象：xxxVO，xxx 一般为网页名称。
+4） POJO 是 DO/DTO/BO/VO 的统称，禁止命名成 xxxPOJO。
+
+>7. 【强制】所有的相同类型的包装类对象之间值的比较，全部使用 equals 方法比较。
+说明：对于 Integer var = ? 在-128 至 127 范围内的赋值，Integer 对象是在
+IntegerCache.cache 产生，会复用已有对象，这个区间内的 Integer 值可以直接使用==进行
+判断，但是这个区间之外的所有数据，都会在堆上产生，并不会复用已有对象，这是一个大坑，
+推荐使用 equals 方法进行判断。
+
+
+### RPA 可视化接口管理工具 通过分析接口结构，动态生成模拟数据，校验真实接口正确性， 围绕接口定义，通过一系列自动化工具提升我们的协作效率。 - 2017.08.23
+[https://github.com/thx/RAP](https://github.com/thx/RAP)
+
+### java深复制 - 2017.08.29
+```java
+AbcCategory nc = new AbcCategory();
+// 将该对象序列化成流,因为写在流里的是对象的一个拷贝，而原对象仍然存在于JVM里面。所以利用这个特性可以实现对象的深拷贝
+ByteArrayOutputStream baos = new ByteArrayOutputStream();
+ObjectOutputStream oos = new ObjectOutputStream(baos);
+oos.writeObject(cate);
+// 将流序列化成对象
+ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
+ObjectInputStream ois = new ObjectInputStream(bais);
+nc = (AbcCategory) ois.readObject();
+```
+
+### BigDecimal 精度处理 - 2017.08.30
+```java
+  @Column(precision = 15, scale = 5, nullable = false, name = "total_amount")
+  public BigDecimal getTotalAmount() {
+    return totalAmount;
+  }
+
+  // 精度处理
+  public void setTotalAmount(BigDecimal totalAmount) {
+    this.totalAmount = SystemConfigUtil.getOrderScaleBigDecimal(totalAmount);
+  }
+
+  // 数据库字段精度设置为5
+```
+
+### Des加密（js+java结果一致） - 2017.09.01
+[http://www.cnblogs.com/qiongmiaoer/p/3573474.html](http://www.cnblogs.com/qiongmiaoer/p/3573474.html)
+
+### java字符串替换 - 2017.09.02
+```java
+String s = sb.toString();
+String patternString = "data-(edit|style)\\s*=\\s*\"\\s*\\{.+?\\}\\s*\"";
+Pattern pattern = Pattern.compile(patternString);
+Matcher matcher = pattern.matcher(s);
+StringBuffer ssb = new StringBuffer();
+while(matcher.find()){
+  matcher.appendReplacement(ssb, "");
+}
+matcher.appendTail(ssb);
+```
+
+### java 移除空行 - 2017.09.02
+```java
+ssb.toString().replaceAll("(?m)^\\s*$(\\n|\\r\\n)", "")
+```
+### hibinate 使用sql查询 - 2017.09.13
+```java
+String hql = "select * from abc_admin where admin_id='"+entity.getAdminId()+"'";
+      AbcAdmin admin = (AbcAdmin) adminService.query(hql, new RowMapper<AbcAdmin>() {
+        @Override
+        public AbcAdmin mapRow(ResultSet arg0, int arg1)
+            throws SQLException {
+          AbcAdmin a = new AbcAdmin();
+          a.setPassword(arg0.getString("password"));
+          return a;
+        }
+      });
+```
+
+### java gc - 201709.17
+$ cd /usr/lib/jvm/java-8-oracle/bin
+$ ./jstat -gcutil 28651 500 0
+
+[文章链接](http://zhihao.info/sd/programm-language/java/one-java-memory-leak-solution/)

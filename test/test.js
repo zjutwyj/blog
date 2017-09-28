@@ -1,58 +1,240 @@
-{
-  "title": "我的网站",
-  "isCopy": "01",
-  "pageName": "API测试",
-  "dataContent": "{}",
-  "styleContent": "{}",
-  "globalContent": "{\"commonConfig\":{\"iconState\":\"on\",\"logoState\":\"on\"},\"navBottomList\":[{\"name\":\"手机号码\",\"display\":\"s\",\"width\":400,\"height\":350,\"component\":\"CellphoneComponent\",\"args\":{\"iconState\":\"c\",\"iconType\":\"f\",\"icon\":\"icon-phone\",\"iconCode\":\"\\\\e609\",\"iconColorType\":\"d\",\"iconColor\":\"#fff\",\"backgroundState\":\"d\",\"urlState\":\"d\",\"display\":\"s\",\"list\":[{\"name\":\"客服\",\"value\":\"13512345678\"}]},\"value\":\"13512345678\"},{\"name\":\"信息咨询\",\"display\":\"s\",\"width\":400,\"height\":350,\"component\":\"MessageComponent\",\"args\":{\"iconState\":\"c\",\"iconType\":\"f\",\"icon\":\"icon-email\",\"iconCode\":\"\\\\e624\",\"iconColorType\":\"d\",\"iconColor\":\"#fff\",\"backgroundState\":\"d\",\"urlState\":\"d\",\"display\":\"s\"},\"value\":\"13512345678\"},{\"name\":\"在线留言\",\"display\":\"s\",\"width\":400,\"height\":350,\"component\":\"OnlineMessage\",\"args\":{\"iconState\":\"c\",\"iconType\":\"f\",\"icon\":\"icon-liuyan\",\"iconCode\":\"\\\\e604\",\"iconColorType\":\"d\",\"iconColor\":\"#fff\",\"backgroundState\":\"d\",\"urlState\":\"d\",\"display\":\"s\"},\"value\":\"\"},{\"name\":\"QQ客服\",\"display\":\"s\",\"width\":400,\"height\":350,\"component\":\"QqComponent\",\"args\":{\"iconState\":\"c\",\"iconType\":\"f\",\"icon\":\"icon-qq\",\"iconCode\":\"\\\\e608\",\"iconColorType\":\"d\",\"iconColor\":\"#fff\",\"backgroundState\":\"d\",\"urlState\":\"d\",\"display\":\"s\"},\"value\":\"\"},{\"name\":\"在线地图\",\"display\":\"s\",\"width\":400,\"height\":500,\"component\":\"MapComponent\",\"args\":{\"iconState\":\"c\",\"iconType\":\"f\",\"icon\":\"icon-location\",\"iconCode\":\"\\\\e623\",\"iconColorType\":\"d\",\"iconColor\":\"#fff\",\"backgroundState\":\"d\",\"urlState\":\"d\",\"display\":\"s\"},\"value\":\"浙江省杭州市\"},{\"name\":\"会员中心\",\"display\":\"h\",\"width\":400,\"height\":350,\"component\":\"Member\",\"args\":{\"iconState\":\"c\",\"iconType\":\"f\",\"icon\":\"icon-member\",\"iconColorType\":\"d\",\"iconColor\":\"#fff\",\"backgroundState\":\"d\",\"urlState\":\"d\",\"display\":\"s\"},\"value\":\"\"},{\"name\":\"购物车\",\"display\":\"h\",\"width\":400,\"height\":350,\"component\":\"Cart\",\"args\":{\"iconState\":\"c\",\"iconType\":\"f\",\"icon\":\"icon-cart\",\"iconColorType\":\"d\",\"iconColor\":\"#fff\",\"backgroundState\":\"d\",\"urlState\":\"d\",\"display\":\"s\"},\"value\":\"\"},{\"name\":\"分销中心\",\"display\":\"h\",\"width\":400,\"height\":350,\"component\":\"Distribution\",\"args\":{\"iconState\":\"c\",\"iconType\":\"f\",\"icon\":\"icon-tree\",\"iconColorType\":\"d\",\"iconColor\":\"#fff\",\"backgroundState\":\"d\",\"urlState\":\"d\",\"display\":\"s\"},\"value\":\"\"}],\"version\":1502680616822}",
-  "globalStyle": "",
-  "globalJs": "",
-  "sharepic": "http://pc.jihui88.com/pc/images/nopic.png",
-  "laymodList": "[{\"page\":\"col\",\"moduleId\":59,\"laymodId\":9864,\"args\":{\"styles\":{},\"tstyles\":{},\"themeState\":\"d\"},\"navId2\":1,\"state\":\"h\"}]",
-  "scope": "snsapi_base",
-  "id": 97,
-  "status": "update",
-  "saveTip": true,
-  "toolDisplay": "00",
-  "editAlign": "left",
-  "maskShow": false,
-  "pageShow": false,
-  "loadingShow": false,
-  "templateAddShow": false,
-  "addModuleShow": false,
-  "editPanelShow": false,
-  "moduleUseShow": false,
-  "kind": "",
-  "kinditems": [{ "text": "我的专属版块", "value": "on" }],
-  "addTime": 1496831686000,
-  "args": "null",
-  "bind": null,
-  "categoryId": "7",
-  "copyId": "",
-  "copyState": "0",
-  "entName": "",
-  "enterpriseId": "Enterp_0000000000000000000049090",
-  "grade": 1,
-  "icon": "",
-  "industryId": "",
-  "language": "1",
-  "layoutId": 97,
-  "logo": "",
-  "mviews": "",
-  "pic": "null",
-  "pviews": "",
-  "rviews": "",
-  "sceneId": "",
-  "seoDescription": "",
-  "seoKeywords": "",
-  "seoTitle": "我的网站",
-  "signContent": "null",
-  "state": "1",
-  "themeId": 0,
-  "updateTime": "2017-08-14 11:14:06.0",
-  "user": null,
-  "uviews": "",
-  "views": "",
-  "time": 1502680578365,
-  "sortString": "[]"
-}
+@RequestMapping(value = "/importSeo", method = RequestMethod.POST)
+  @ResponseBody
+  public AjaxJson importSeo(HttpServletRequest req) {
+    if(!isLogin()){
+      return ajaxJsonErrorMessage("未登陆");
+    }
+    String pageType = req.getParameter("pageType");
+    String templatePage = req.getParameter("templatePage");
+  if (StringUtil.isNotBlank(pageType)
+      && StringUtil.isNotBlank(templatePage)) {
+    List<AbcSeoTemplate> list = templateList(templatePage);
+    if (list.isEmpty()) {
+      return ajaxJsonErrorMessage("导入错误，请先设置保存seo配置");
+    } else {
+      if (templatePage.equals("common")) {
+        if (pageType.equals("seoTitle")) {
+          if (getCurrentUser().getGrade().equals(
+              CommonConst.USERGRADETWO)) {
+            for (GroupNavigator gn : getNavGroupList()) {
+              List<GroupSeo> gs = groupSeoList(gn.getPage());
+              if (gs.isEmpty()) {
+                GroupSeo g = new GroupSeo();
+                g.setPage(gn.getPage());
+                g.setTitle(replaceDate(list.get(0)
+                    .getSeoTitle()
+                    .replace("{page}", gn.getName())));
+                g.setEnterpriseId(getCurrentUser()
+                    .getEnterpriseId());
+                baseService.save(g);
+              } else {
+                GroupSeo g = gs.get(0);
+                g.setTitle(replaceDate(list.get(0)
+                    .getSeoTitle()
+                    .replace("{page}", gn.getName())));
+                baseService.update(g);
+              }
+            }
+          }
+        if (pageType.equals("seoKey")) {
+
+          if (getCurrentUser().getGrade().equals(
+              CommonConst.USERGRADETWO)) {
+            for (GroupNavigator gn : getNavGroupList()) {
+              List<GroupSeo> gs = groupSeoList(gn.getPage());
+              if (gs.isEmpty()) {
+                GroupSeo g = new GroupSeo();
+                g.setPage(gn.getPage());
+                g.setKeywords(replaceDate(list.get(0)
+                    .getSeoKey()
+                    .replace("{page}", gn.getName())));
+                g.setEnterpriseId(getCurrentUser()
+                    .getEnterpriseId());
+                baseService.save(g);
+              } else {
+                GroupSeo g = gs.get(0);
+                g.setKeywords(replaceDate(list.get(0)
+                    .getSeoKey()
+                    .replace("{page}", gn.getName())));
+                baseService.update(g);
+              }
+            }
+          }
+        if (pageType.equals("seoDescription")) {
+          if (getCurrentUser().getGrade().equals(
+              CommonConst.USERGRADETWO)) {
+            for (GroupNavigator gn : getNavGroupList()) {
+              List<GroupSeo> gs = groupSeoList(gn.getPage());
+              if (gs.isEmpty()) {
+                if (gn.getPage().length() <= 32) {
+                  GroupSeo g = new GroupSeo();
+                  g.setPage(gn.getPage());
+                  g.setDescription(replaceDate(list
+                      .get(0)
+                      .getSeoDescription()
+                      .replace("{page}", gn.getName())));
+                  g.setEnterpriseId(getCurrentUser()
+                      .getEnterpriseId());
+                  baseService.save(g);
+                }
+              } else {
+                GroupSeo g = gs.get(0);
+                g.setDescription(replaceDate(list.get(0)
+                    .getSeoDescription()
+                    .replace("{page}", gn.getName())));
+                baseService.update(g);
+              }
+            }
+          }
+      if (templatePage.equals("news_detail")) {
+        if (pageType.equals("seoTitle")) {
+          AbcNews an = new AbcNews();
+          an.setEnterpriseId(getCurrentUser().getEnterpriseId());
+          List<AbcNews> nl = baseService.findByExample(an);
+          for (AbcNews a : nl) {
+            if (StringUtil
+                .isNotBlank(list.get(0).getSeoTitle())) {
+              a.setSeoTitle(replaceDate(list.get(0)
+                  .getSeoTitle()
+                  .replace("{news_title}", a.getTitle())));
+              if (a.getSeoTitle().indexOf("{category}") > -1)
+                a.setSeoTitle(categorySeo(a.getCategory(),
+                    a.getSeoTitle(), 1));
+            }
+            baseService.update(a);
+          }
+        }
+        if (pageType.equals("seoKey")) {
+          AbcNews an = new AbcNews();
+          an.setEnterpriseId(getCurrentUser().getEnterpriseId());
+          List<AbcNews> nl = baseService.findByExample(an);
+          for (AbcNews a : nl) {
+            if (StringUtil.isNotBlank(list.get(0).getSeoKey()))
+              a.setNkey(replaceDate(list.get(0).getSeoKey()
+                  .replace("{news_title}", a.getTitle())));
+            if (a.getNkey().indexOf("{category}") > -1)
+              a.setNkey(categorySeo(a.getCategory(),
+                  a.getNkey(), 2));
+            baseService.update(a);
+          }
+        }
+        if (pageType.equals("seoDescription")) {
+          AbcNews an = new AbcNews();
+          an.setEnterpriseId(getCurrentUser().getEnterpriseId());
+          List<AbcNews> nl = baseService.findByExample(an);
+          for (AbcNews a : nl) {
+            if (StringUtil.isNotBlank(list.get(0)
+                .getSeoDescription()))
+              a.setSeoDescription(replaceDate(list.get(0)
+                  .getSeoDescription()
+                  .replace("{news_title}", a.getTitle())));
+            if (a.getSeoDescription().indexOf("{category}") > -1)
+              a.setSeoDescription(categorySeo(
+                  a.getCategory(), a.getSeoDescription(),
+                  3));
+            baseService.update(a);
+          }
+        }
+      }
+      if (templatePage.equals("product_detail")) {
+
+        DetachedCriteria dc = DetachedCriteria
+            .forClass(AbcProduct.class);
+        dc.add(Restrictions.eq("enterpriseId", getCurrentUser()
+            .getEnterpriseId())).addOrder(Order.desc("sort"));
+        List<AbcProduct> pl = baseService.findAllByCriteria(dc);
+        int i = 0;
+        if (pageType.equals("seoTitle")) {
+          for (AbcProduct a : pl) {
+            if (StringUtil
+                .isNotBlank(list.get(0).getSeoTitle()))
+              try {
+                a.setSeoTitle(replaceDate(list
+                    .get(0)
+                    .getSeoTitle()
+                    .replace("{product_title}",
+                        a.getName())
+                    .replace(
+                        "{product_type}",
+                        a.getProdtype() == null ? ""
+                            : a.getProdtype())));
+
+                if (a.getSeoTitle().indexOf("{category}") > -1)
+                  a.setSeoTitle(categorySeo(
+                      a.getCategory(),
+                      a.getSeoTitle(), 1));
+                baseService.update(a);
+                System.out.println("plsize:" + pl.size()
+                    + ";i=" + (++i));
+              } catch (Exception e) {
+
+              }
+          }
+        }
+        if (pageType.equals("seoKey")) {
+          for (AbcProduct a : pl) {
+            if (StringUtil.isNotBlank(list.get(0).getSeoKey()))
+              try{
+                a.setPkey(replaceDate(list
+                    .get(0)
+                    .getSeoKey()
+                    .replace("{product_title}", a.getName())
+                    .replace(
+                        "{product_type}",
+                        a.getProdtype() == null ? ""
+                            : a.getProdtype())));
+                if (a.getPkey().indexOf("{category}") > -1)
+                  a.setPkey(categorySeo(a.getPkey(), a.getPkey(),
+                      2));
+                baseService.update(a);
+              }catch(Exception e){
+
+              }
+          }
+
+          /*for (AbcCategory ca : cg) {
+            // 设置当前登陆用户的 GroupSeo 表中 seo优化
+            if (m.get(ca.getCategoryId()) != null
+                && StringUtil.isNotBlank(list.get(0)
+                    .getSeoKey())) {
+              GroupSeo g = (GroupSeo) m.get(ca
+                  .getCategoryId());
+              g.setKeywords(list.get(0).getSeoKey());
+              baseService.update(g);
+            }
+          }*/
+        }
+        if (pageType.equals("seoDescription")) {
+          for (AbcProduct a : pl) {
+            if (StringUtil.isNotBlank(list.get(0)
+                .getSeoDescription()))
+              try{
+                a.setSeoDescription(replaceDate(list
+                    .get(0)
+                    .getSeoDescription()
+                    .replace("{product_title}", a.getName())
+                    .replace(
+                        "{product_type}",
+                        a.getProdtype() == null ? ""
+                            : a.getProdtype())));
+                if (a.getSeoDescription().indexOf("{category}") > -1)
+                  a.setSeoDescription(categorySeo(
+                      a.getSeoDescription(), a.getPkey(), 3));
+                baseService.update(a);
+              }catch(Exception e){
+
+              }
+          }
+        }
+      }
+      }
+      // 通知静态化
+      webinfoService.notifyStatic(getCurrentUser().getEnterpriseId());
+      j.setMsg("导入成功!");
+      j.setSuccess(true);
+  } else {
+    j.setMsg("系统出错，请稍候再试!");
+    j.setSuccess(false);
+  }
+  return j;
+  }
