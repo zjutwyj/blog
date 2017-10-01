@@ -6,15 +6,15 @@
 
 >[docker](https://github.com/zjutwyj/blog/blob/master/docker.md)
 
->[git](https://github.com/zjutwyj/blog/blob/master/git.md)
+>[git](https://github.com/zjutwyj/blog/blob/master/Git.md)
 
 >[idea](https://github.com/zjutwyj/blog/blob/master/idea.md)
 
->[java](https://github.com/zjutwyj/blog/blob/master/java.md)
+>[java](https://github.com/zjutwyj/blog/blob/master/Java.md)
 
 >[javascript](https://github.com/zjutwyj/blog/blob/master/javascript.md)
 
->[linux](https://github.com/zjutwyj/blog/blob/master/linux.md)
+>[linux](https://github.com/zjutwyj/blog/blob/master/Linux.md)
 
 >[meven](https://github.com/zjutwyj/blog/blob/master/meven.md)
 
