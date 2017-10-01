@@ -25,3 +25,6 @@ $ netsh interface portproxy show all
 查看端口映射列表
 
 [查看更多](http://blog.sina.com.cn/s/blog_59cc90640102xhel.html)
+
+### 怎样将大文件分割成多个小文件
+[https://jingyan.baidu.com/article/046a7b3eefff69f9c37fa97c.html](https://jingyan.baidu.com/article/046a7b3eefff69f9c37fa97c.html)

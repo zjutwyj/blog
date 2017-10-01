@@ -103,6 +103,6 @@ ListenableFuture<User> findOneByLastname(String lastname); // springframework
 ### Field 'tag_relation_ship_enum' doesn't have a default value - 2017.09.25
 问题往往出现在修改表字段(且表字段为not null)后引起的,到数据库中删除多余的字段
 
-
-### spring-boot前端参数单位转换 - 2017.09.27
-[http://www.jianshu.com/p/3a5fc2564501](http://www.jianshu.com/p/3a5fc2564501)
+### spring mvc使用@InitBinder 标签对表单数据绑定 - 2017.09.30
+在我的项目中是在BaseController中增加方法initBinder，并使用注解@InitBinder标注
+[http://blog.csdn.net/axin66ok/article/details/17938095](http://blog.csdn.net/axin66ok/article/details/17938095)

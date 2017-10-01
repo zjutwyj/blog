@@ -42,5 +42,8 @@ $ docker save -o redis.tar redis   // 保存为文件
 $ docker load --input redis.tar    // 载入文件
 
 
+### docker 命令不可用，提示error during connect - 2017.09.30
 
+$ docker-machine env default
+重启docker
 
