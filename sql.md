@@ -139,3 +139,15 @@ SELECT sell FROM abc_product WHERE enterprise_id = ''ORDER BY (sell IS not NULL)
 ```sql
 select * from abc_news where  news_id  in (select min(news_id) from abc_news where category='Category_00000000000000000344331' group by sort) order by sort desc
 ```
+
+### mysql 登录 - 2017.10.03
+--本地连接
+
+mysql –uroot -p
+
+--远程连接
+
+mysql –uwgb –hXXX.XXX.XXX.XXX –p
+
+### windows my.init文件位置
+C:\ProgramData\MySQL\MySQL Server 5.5

@@ -67,3 +67,21 @@ netstat -na|grep 8080
 ### linux 处理带有空格的文件夹名称 - 2017.09.04
 cd c/Program\ Files/xxx/xx
 [https://linux.cn/article-5777-1.html](https://linux.cn/article-5777-1.html)
+
+### 查看请求访问量 - 2017.10.02
+// IP
+$ cat access.log | cut -fl -d " " | sort | uniq -c | sort -k l -n -r | head -10
+
+// 网址
+$ cat access.log | cut -f4 -d " " | sort | uniq -c | sort -k l -n -r | head -10
+
+### 查看最耗时的页面 - 2017.10.02
+
+$ cat access.log | sort -k 2 -n -r | head -10
+
+### 统计404请求的占比 - 2017.10.02
+$ export total_line=`wc -l access.log | cut -fl -d " "` && exprot not_found_line=`awk '$6=='404'{print $6}' access.log | wc -l` && expr $not_found_line \*100/$total_line
+
+### 前20内存占用情况 - 2017.10.19
+
+$ ps aux | sort -k4nr | head -n 20

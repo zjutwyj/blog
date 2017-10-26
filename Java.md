@@ -711,3 +711,11 @@ $ cd /usr/lib/jvm/java-8-oracle/bin
 $ ./jstat -gcutil 28651 500 0
 
 [文章链接](http://zhihao.info/sd/programm-language/java/one-java-memory-leak-solution/)
+
+### Java线程详细监控jconsole.exe - 2017.10.26
+目录： jdk -> bin -> jconsole.exe
+[http://ju.outofmemory.cn/entry/88242](http://ju.outofmemory.cn/entry/88242)
+
+### FutureTask - 2017.10.26
+// 记得关闭线程池
+[http://blog.csdn.net/javaloveiphone/article/details/54909540](http://blog.csdn.net/javaloveiphone/article/details/54909540)

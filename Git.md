@@ -73,3 +73,7 @@ $ cd existing_git_repo
 $ git remote add origin https://gitee.com/zjutwyj/spring-data-jpa.git
 $ git push -u origin master
 
+###  执行git reset --hard时报Unable to create 'C:/software/WorkProjects/Pc/.git/index.lock': File exists.错误 - 2017.10.17
+
+$ rm -f ./.git/index.lock
+
