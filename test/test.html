@@ -1,13 +1,18 @@
-${command.pieceNavList(laymod)}
-<div id="xyb_nav">
-  <div class="nav_bg">
-    <div class="nav_logo">
-      <a href="index" title="${enterprise.name}" class="${laymod.args.logo_display}" class="${laymod.args.logo_display}"><img  data-edit="{name:'LOGO', field:'logo', type:'img'}" src="${cdnPath}<c:out value="${laymod.args.logo}">upload/a/a1/admin/picture/2017/10/26/0c91dd4b-3b6c-4499-9ae6-8ee0116ce029.png</c:out>" alt="${enterprise.name}" height="40" border="0"></a>
+<section id="control">
+  <div class="controlMenu">
+    <div class="device-select">
+      <a href="javascript:;" class="desktop active" data-value="desktop">
+                    <i class="mofont moicon-desktop active" aria-hidden="true"></i>
+                </a>
+      <a href="javascript:;" class="mobile" data-value="mobile">
+                    <i class="mofont moicon-phone" aria-hidden="true"></i>
+                </a>
     </div>
-    <ul class="${laymod.args.nav_display}" data-edit="{name:'导航',field:'nav', type:'navigate'}">
-      <c:forEach items="${navList}" var="nav2" varStatus="i">
-        <li id="menu-${nav2.page}" class="navlist_${i.index}"><a href="${nav2.args.linkUrl}" title="${nav2.name}"><span>${nav2.name}</span><em></em></a></li>
-      </c:forEach>
-    </ul>
+    <div class="qrcode">
+      <i class="mofont moicon-juxing"></i>
+      <div class="qrcondeArea">
+        <canvas width="256" height="256"></canvas>
+      </div>
+    </div>
   </div>
-</div>
+</section>

@@ -18,6 +18,8 @@
 
 >[meven](https://github.com/zjutwyj/blog/blob/master/meven.md)
 
+>[nginx](https://github.com/zjutwyj/blog/blob/master/nginx.md)
+
 >[npm](https://github.com/zjutwyj/blog/blob/master/npm.md)
 
 >[redis](https://github.com/zjutwyj/blog/blob/master/redis.md)

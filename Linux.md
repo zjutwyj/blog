@@ -85,3 +85,8 @@ $ export total_line=`wc -l access.log | cut -fl -d " "` && exprot not_found_line
 ### 前20内存占用情况 - 2017.10.19
 
 $ ps aux | sort -k4nr | head -n 20
+
+
+### 命令行的艺术 - 2017.12.12
+[https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+

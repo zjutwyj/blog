@@ -50,7 +50,7 @@ $ git remote prune origin
 
 
 ### git add忽略某些文件的方法 - 2017.06.14
-命令：Git update-index --assume-unchanged FILENAME       路径+文件名
+命令：git update-index --assume-unchanged FILENAME       路径+文件名
 若以后不想忽略该文件的修改，则输入命令：git update-index --no-assume-unchanged FILENAME
 
 ### 推送本地文件到运程仓库 - 2017.09.23

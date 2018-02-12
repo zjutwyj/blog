@@ -28,3 +28,7 @@ $ netsh interface portproxy show all
 
 ### 怎样将大文件分割成多个小文件
 [https://jingyan.baidu.com/article/046a7b3eefff69f9c37fa97c.html](https://jingyan.baidu.com/article/046a7b3eefff69f9c37fa97c.html)
+
+### 触摸板定点装置失灵解决方案 - 2018.01.09
+
+合上笔记本重新打开就能恢复正常

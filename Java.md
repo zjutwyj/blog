@@ -418,7 +418,7 @@ Math.round(float f)
 import javax.persistence.Transient;
 
 ### org.springframework.beans.factory.NoSuchBeanDefinitionException: No unique bean of type [org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter] is defined: expected single bean but found 2 - 2016.06.09
-检查ajax跨域请求中是否设置jsonpCallback:'submember',
+检查ajax跨域请求中是否设置jsonpCallback:'submember', 并同一个页面中两个相同的请求值也需要不一样
 
 ### StringUtils.leftPad自动补全功能 - 2016.06.25
 ```java
@@ -719,3 +719,26 @@ $ ./jstat -gcutil 28651 500 0
 ### FutureTask - 2017.10.26
 // 记得关闭线程池
 [http://blog.csdn.net/javaloveiphone/article/details/54909540](http://blog.csdn.net/javaloveiphone/article/details/54909540)
+
+### 使用jstack精确找到异常代码 - 2017.11.14
+
+[https://jingyan.baidu.com/album/4f34706e3ec075e387b56df2.html?picindex=1](https://jingyan.baidu.com/album/4f34706e3ec075e387b56df2.html?picindex=1)
+
+### Field 'id' doesn't have a default value - 2018.01.08
+主键是否定义为自增
+[http://blog.csdn.net/tangchenchan/article/details/51212354](http://blog.csdn.net/tangchenchan/article/details/51212354)
+
+### javadoc - 2018.01.11
+
+javadoc [-d 文档存放目录] -author -version cn/softown/Hello.java cn/softown/World.java
+
+直接使用包名作为编译参数
+javadoc cn.softown org.apache
+
+### mybatis 实现关联表查询 - 2018.01.18
+
+[https://www.cnblogs.com/xdp-gacl/p/4264440.html](https://www.cnblogs.com/xdp-gacl/p/4264440.html)
+
+### 支付宝支付异步通知验签失败 - 2018.01.30
+
+检查下支付宝公钥是否填写正确：https://openhome.alipay.com/platform/keyManage.htm

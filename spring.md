@@ -34,8 +34,8 @@ $ mvn install  // 编译
 $ mvn clean package -Dmaven.test.skip=true // 打包并跳过单元测试
 $ mvn -DskipTests -Pproduction clean package
 
-$ nohup java -jar jhw-wechat-article-java-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev&    // nohup 为关闭终端后不退出程序 &为后台运行
-$ nohup java -jar jhw-wechat-article-java-0.0.1-SNAPSHOT.jar --spring.profiles.acitve=prod&
+$ nohup java -Xmx32m -Xss256k -jar jhw-wechat-article-java-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev&    // nohup 为关闭终端后不退出程序 &为后台运行
+$ nohup java -Xmx32m -jar jhw-wechat-article-java-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod&
 $ ps -aux| grep jhw   // 查看进程
 
 $ tail -f ./nohup.out  // 查看日志
@@ -106,3 +106,13 @@ ListenableFuture<User> findOneByLastname(String lastname); // springframework
 ### spring mvc使用@InitBinder 标签对表单数据绑定 - 2017.09.30
 在我的项目中是在BaseController中增加方法initBinder，并使用注解@InitBinder标注
 [http://blog.csdn.net/axin66ok/article/details/17938095](http://blog.csdn.net/axin66ok/article/details/17938095)
+
+### Spring Boot中的事务管理 2017.11.09
+[http://blog.didispace.com/springboottransactional/](http://blog.didispace.com/springboottransactional/)
+
+### Spring Boot Performance性能与Spring Boot Memory Performance内存性能 - 2017.11.24
+[https://alexecollins.com/spring-boot-performance/](https://alexecollins.com/spring-boot-performance/)
+[https://dzone.com/articles/spring-boot-memory-performance](https://dzone.com/articles/spring-boot-memory-performance)
+
+### Spring Boot多数据源连接8小时后断开的问题解决（MySQL） - 2017.12.15
+[https://www.cnblogs.com/EasonJim/p/7651781.html](https://www.cnblogs.com/EasonJim/p/7651781.html)
