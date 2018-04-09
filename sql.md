@@ -154,7 +154,8 @@ C:\ProgramData\MySQL\MySQL Server 5.5
 
 ### 查看并修改 max_allowed_packet 大小 - 2018.01.15
 show VARIABLES like '%max_allowed_packet%';
-set global max_allowed_packet = 2*1024*1024*10
+set global max_allowed_packet = 20*1024*1024*10;
+show VARIABLES like '%max_allowed_packet%';
 
 ### 提高mysql千万级大数据SQL查询优化30条经验（Mysql索引优化注意） - 2018.01.24
 
@@ -164,4 +165,10 @@ set global max_allowed_packet = 2*1024*1024*10
 
 ```sql
 select * from tag_relation_ship where type='01' and tag_id in (55,64,82) group by item_id  having count(item_id) > 2
+```
+
+### mybitis枚举
+```xml
+<result column="type" property="type" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+#{type,typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"},
 ```

@@ -21,8 +21,15 @@ Win+SHIFT+→：将活动窗口移至右侧显示器（与开始屏幕应用无�
 $ netsh interface portproxy add v4tov4 listenport=8080 connectaddress=192.168.8.108 connectport=8080
 将本地的8080端口的数据转发至192.168.8.108上的8080端口
 
+$ netsh interface portproxy add v4tov4 listenport=8080 connectaddress=192.168.99.100 connectport=6379
+将本地的8080端口的数据转发至192.168.99.100上的6379端口 - redis
+
+
 $ netsh interface portproxy show all
 查看端口映射列表
+
+$ netsh interface portproxy delete v4tov4 listenport=8080
+删除某个端口号
 
 [查看更多](http://blog.sina.com.cn/s/blog_59cc90640102xhel.html)
 

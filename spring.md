@@ -116,3 +116,16 @@ ListenableFuture<User> findOneByLastname(String lastname); // springframework
 
 ### Spring Boot多数据源连接8小时后断开的问题解决（MySQL） - 2017.12.15
 [https://www.cnblogs.com/EasonJim/p/7651781.html](https://www.cnblogs.com/EasonJim/p/7651781.html)
+
+### spring data jpa => Parameter with that position [1] did not exist
+
+```java
+@Query( "select new com.jihui88.dto.PermissionOutputDTO" +
+            "(h.permissionId,h.permissionType,h.username) " +
+            "from Permission h " +
+            "where h.username like:username" )
+    Page<PermissionOutputDTO> findListByUsernameWithDto(@Param( "username" ) String username, Pageable pageable);
+
+// 请求
+permissionRepository.findListByUsernameWithDto("%"  +username + "%", pageable);
+```

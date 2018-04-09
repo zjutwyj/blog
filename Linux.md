@@ -90,3 +90,5 @@ $ ps aux | sort -k4nr | head -n 20
 ### 命令行的艺术 - 2017.12.12
 [https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
+
+scp -r target/jhw-online-order-java-0.0.1-SNAPSHOT.zip root@xxx.xx.xx.xx:/mnt/var/www/abbcc/jhw-online-order/jhw-online-order-java

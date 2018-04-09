@@ -742,3 +742,16 @@ javadoc cn.softown org.apache
 ### 支付宝支付异步通知验签失败 - 2018.01.30
 
 检查下支付宝公钥是否填写正确：https://openhome.alipay.com/platform/keyManage.htm
+
+### tomcat cpu占用高问题解决
+
+// 查询cpu占用多的时间长的线程ID
+$ ps -mp 2682 -o THREAD,tid,time
+==> 26089
+
+// 转换为16进制格式
+$ printf "%x\n" 26089
+==> ab2
+
+// 打印堆
+$ jstack 26089 |grep 2682 -ab2
