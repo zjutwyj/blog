@@ -1,9 +1,36 @@
-2018-03-27 10:48:08,196 INFO [com.abbcc.filter.Struts2Filter:68] - <http://www.jihui88.com/rest/api/user/wxapplogin116.62.6.135>
-【机汇网微信小程序登录】 code=003qWZT61vXrUR1xuyQ61DFVT61qWZTa,appid=wx2aba9d238ba02a76,appsecret=c7131553b820b07e778d763bac18e259,nickName=null,skey=null
-【机汇网微信小程序登录】  user=null
-【机汇网微信小程序登录】 appid=wx2aba9d238ba02a76; appsecret=c7131553b820b07e778d763bac18e259; url=https://api.jihui88.net/jihui_open/api/wxa_login?appid=wx2aba9d238ba02a76&js_code=003qWZT61vXrUR1xuyQ61DFVT61qWZTa
-【机汇网微信小程序登录】 result={"session_key":"jDUEjP65teBcJIx1+\/fFgg==","openid":"oEjsX0U6noJgJCEnkN3EKtezFq5U","unionid":"oOreYjnmZHUaCgcadPaGCuyj4u7E"}
+var model = {
 
-【机汇网微信小程序登录】 openid=oEjsX0U6noJgJCEnkN3EKtezFq5U,sessionKey=jDUEjP65teBcJIx1+/fFgg==,encryptedData=d2RhHX6DJ/BcnzhS87YFclDMWjUZNBofqHr9JrjmLC3QUO86/C+02uNWCdNr7k0BfZqWaQh7Zuu8N7JWScuH+rYohgYDsWz+G6gSZbGmrPy/iZwwSij/ARPr0C+0RpTTg1Cqi6TSsbXFY1UmUKfMtxKkaL04h7dW7yeGguvzG2+n+xn5N0sE3c4F65GFjwHAYVBR7rvOINYHMAj/VmcDhLw+XggSKUoPBxRM/5Ow0oNgtzzH7TLFwFXO7ag8UIZ1eaI4kV8peMQtNZdwmce1yd+3mg3F0+G3+d86B57fcZ0iD1oI5z2+bhIxaU/8lXxpVc2Dt8UtXLpOMwywhBzJEIvE0KUPbF/Ehdn3IIbgoD9A2rxrIBbfETPFvUoduBHJP12tGVqeW3/D3/QLZGQky/+mB7wnJgf6I6bszUHoRD/LABlMFXS+6quaUzdZ+ObDHbJrlL8EdLNrhhJRSToZE8JUDmfvHwb90Z6CFoH6MtxB7j/jUgAbPLg27kX1Vdum,iv=iqzBf0CdNhQLI88cIEn2Ow==
-decryptUserInfo -> result={"openId":"oEjsX0U6noJgJCEnkN3EKtezFq5U","nickName":"wes","gender":1,"language":"zh_CN","city":"","province":"","country":"Jersey","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/OVJONAgKK7g2SmfEba3m3UWEDMwEeGicWqsy1qICSn7cUOnJARc3iawEmxARMbHaOeB7Lv0sGwQRfpKtMHlpaVkg/0","unionId":"oOreYjnmZHUaCgcadPaGCuyj4u7E","watermark":{"timestamp":1522118888,"appid":"wx2aba9d238ba02a76"}}
-【机汇网微信小程序登录】 unionId=oOreYjnmZHUaCgcadPaGCuyj4u7E
+    "memberRank": { "name": "ÆÕÍ¨»áÔ±", "enterpriseId": "Enterp_0000000000000000000000039", "rankId": "ff8081814b56f84d014b572385030002", "isDefault": "01", "point": 0, "addTime": 1423096120472, "updateTime": 1430875158815, "preferentialScale": 100, "rdesc": null },
+    "belongId": null,
+    "deposit": 11,
+    "point": 11,
+    "addTime": "2017-01-11T01:13:29.000Z",
+    "openid": "ofDJ5sxTNRdGIxXbPqD5fx5hnvsY",
+    "safeQuestion": null,
+    "updateTime": "2018-03-28 15:59:37",
+    "img": "http://wx.qlogo.cn/mmopen/PiajxSqBRaEJH2gicKDImXmFkQqcmhsRE8ibYjmVS7BFIn6bYOPF4KOSSHO0V2MEAdiahCRWdGIqTcQGjfcvshqxFA/0",
+    "sex": "",
+    "city": "",
+    "isAccountLocked": "00",
+    "isAccountEnabled": "00",
+    "safeAnswer": null,
+    "loginFailureCount": 0,
+    "lockedDate": null,
+    "registerIp": "127.0.0.1",
+    "loginIp": "127.0.0.1",
+    "loginDate": 1484097209803,
+    "passwordRecoverKey": null,
+    "cartItemSet": [],
+    "receiverSet": [],
+    "memberAttributeMapStore": [{ "id": "402801815a8c94ec015a8d30e5660010", "element": "[ÊÇ]", "memberId": "ff808181596ed2a001598b1645cb041f", "att": { "name": "ÊÇ·ñÒÑ»é", "attributeType": "select", "sort": 3, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "ff8081815481b8e9015499b91e9b03b0", "addTime": 1462867926680, "updateTime": 1527068021987, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": "[\"ÊÇ\",\"·ñ\"]", "attributeOptionList": ["ÊÇ", "·ñ"], "value": "ÊÇ" } }, { "id": "402801815a8c94ec015a8d30e565000e", "element": "[2017-03-01]", "memberId": "ff808181596ed2a001598b1645cb041f", "att": { "name": "µÇ¼ÇÈÕÆÚ", "attributeType": "date", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "ff80818153e8ef490154031fb1e80635", "addTime": 1460341289445, "updateTime": 1462867988012, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": null, "attributeOptionList": null, "value": "2017-03-02" } }, { "id": "402801815a8c94ec015a8d30e566000f", "element": "[1]", "memberId": "ff808181596ed2a001598b1645cb041f", "att": { "name": "ÁªÏµÎÒÃÇ", "attributeType": "text", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "4028818f4a904861014a9052ab050005", "addTime": 1419760544511, "updateTime": 1419760544511, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": null, "attributeOptionList": null, "value": "1" } }, { "id": "402801815a8c94ec015a8d30e565000c", "element": "[1]", "memberId": "ff808181596ed2a001598b1645cb041f", "att": { "name": "  ÄêÁä", "attributeType": "number", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "4028818f4a954b87014a959e96c30004", "addTime": 1419849406143, "updateTime": 1462868198293, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": "[\"Ò»¸öÈËÂð\"]", "attributeOptionList": ["Ò»¸öÈËÂð"], "value": 1 } }, { "id": "402801815a8c94ec015a8d30e565000d", "element": "[³ª¸è]", "memberId": "ff808181596ed2a001598b1645cb041f", "att": { "name": "°®ºÃ", "attributeType": "checkbox", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "4028818f4ac894bd014ac8a7a2ee0003", "addTime": 1420705637087, "updateTime": 1462867959468, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": "[\"³ª¸è\",\"ÌøÎè\",\"ÏÂÆå\",\"´òÆ¹ÅÒ\"]", "attributeOptionList": ["³ª¸è", "ÌøÎè", "ÏÂÆå", "´òÆ¹ÅÒ"], "value": ["³ª¸è"] } }],
+    "depositSet": [],
+    "mobile": null,
+    "province": "",
+    "vericode": null,
+    "items": [{ "name": "ÊÇ·ñÒÑ»é", "attributeType": "select", "sort": 3, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "ff8081815481b8e9015499b91e9b03b0", "addTime": 1462867926680, "updateTime": 1527068021987, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": "[\"ÊÇ\",\"·ñ\"]", "attributeOptionList": ["ÊÇ", "·ñ"], "value": "ÊÇ" }, { "name": "µÇ¼ÇÈÕÆÚ", "attributeType": "date", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "ff80818153e8ef490154031fb1e80635", "addTime": 1460341289445, "updateTime": 1462867988012, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": null, "attributeOptionList": null, "value": "2017-03-02" }, { "name": "ÁªÏµÎÒÃÇ", "attributeType": "text", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "4028818f4a904861014a9052ab050005", "addTime": 1419760544511, "updateTime": 1419760544511, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": null, "attributeOptionList": null, "value": "1" }, { "name": "  ÄêÁä", "attributeType": "number", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "4028818f4a954b87014a959e96c30004", "addTime": 1419849406143, "updateTime": 1462868198293, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": "[\"Ò»¸öÈËÂð\"]", "attributeOptionList": ["Ò»¸öÈËÂð"], "value": 1 }, { "name": "°®ºÃ", "attributeType": "checkbox", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "4028818f4ac894bd014ac8a7a2ee0003", "addTime": 1420705637087, "updateTime": 1462867959468, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": "[\"³ª¸è\",\"ÌøÎè\",\"ÏÂÆå\",\"´òÆ¹ÅÒ\"]", "attributeOptionList": ["³ª¸è", "ÌøÎè", "ÏÂÆå", "´òÆ¹ÅÒ"], "value": ["³ª¸è"] }],
+    "ff8081815481b8e9015499b91e9b03b0": "ÊÇ",
+    "ff80818153e8ef490154031fb1e80635": "2017-03-02",
+    "4028818f4a904861014a9052ab050005": "1",
+    "4028818f4a954b87014a959e96c30004": 1,
+    "4028818f4ac894bd014ac8a7a2ee0003": ["³ª¸è"]
+}

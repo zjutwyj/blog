@@ -277,3 +277,9 @@ function unique(arr){
 
 
 ### 判断是否存在父框架
+
+
+
+### jquery ajax jsonp  偶尔报[jsonpCallback] is not a function - 2018.04.12
+
+脚本中存在多个ajax,并且都设置了jsonpCallback:"callback"导致的，将jsonpCallback改成不同的值就可以了

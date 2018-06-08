@@ -8,7 +8,7 @@ docker run -d -p 8080:80 nignx
 docker run --name zookeeper --restart always -d -p 2181:2181 zookeeper
 
 ### 启动redis - 2017.09.12
-$ docker run --name redis --restart always -d -p 6379:6379 -v $PWD/data:/data redis redis-server --appendonly yes
+$ docker run --name redis --restart always -d -p 6379:6379 redis redis-server --appendonly yes
 
 >命令说明：
 -p 6379:6379 :将容器的6379端口映射到主机的6379端口
@@ -49,3 +49,7 @@ $ docker-machine env default
 
 ### Docker报错： Default Boot2Docker ISO is out-of-date - 2017.10.09
 [http://www.chuanblog.com/arc/65b520896567.html](http://www.chuanblog.com/arc/65b520896567.html)
+
+### Docker 移除tag为none的镜像
+docker rmi $(docker images --format '{{.ID}}' --filter=dangling=true)
+[https://docs.docker.com/engine/reference/commandline/images/#filtering](https://docs.docker.com/engine/reference/commandline/images/#filtering)

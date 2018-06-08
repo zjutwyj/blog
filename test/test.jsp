@@ -1,57 +1,101 @@
-<!-- 新闻列表 -->
-<div id="lzj_page_news">
-  <div class="container">
-    <div class="row">
-      <div class="news_box main_news col-md-9 col-sm-8 col-xs-12">
-        ${command.pieceNewsList(laymod, 1, 16, true, false, false, 'mainnews')}
-        <div class="news_content">
-          <p></p>
-          <ul>
-          <c:forEach items="${newsList}" var="news" varStatus="newsStatus">
-            <li><a href="nd?itemId=${command.getShortId(news.news_id)}">${news.title}</a></li>
-          </c:forEach>
-          </ul>
-        </div>
-        <div class="page_content">
-          <div class="page_info">
-            <div class="page_btn page_prev">
-              <span class="go_first"><a href="?pageno${laymod.laymodId}=1&isMobile=${isMobile}"><i class="fonticon"></i></a></span>
-              <span class="go_prev"><a href="${prevString}"><i class="fonticon"></i></a></span>
-            </div>
-            <div class="page_list">
-              <ul  data-currentpage="${currentPage}" data-allpage="${pageCount}">
-                <c:forEach items="${selectHrefList}" var="page" varStatus="pageStatus">
-                  <li class="<c:if test='${pageStatus.index+1 == currentPage}'>active</c:if>"><a href="${page}">${pageStatus.index+1}</a></li>
-                </c:forEach>
-              </ul>
-            </div>
-            <div class="page_btn page_next">
-              <span class="go_next"><a href="${nextString}"><i class="fonticon"></i></a></span>
-              <span class="go_last"><a href="?pageno${laymod.laymodId}=${pageCount}&isMobile=${isMobile}"><i class="fonticon"></i></a></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="news_box side_news col-md-3 col-sm-4 col-xs-12">
-        ${command.pieceNewsList(laymod, 1, 5, false, false, false, 'latestnews')}
-        <div class="latest_news">
-          <p>最新资讯</p>
-          <ul  data-edit="{name: '侧边最新资讯',field:'latestnews',type:'news_list',reload:true}">
-            <c:forEach items="${newsList}" var="news" varStatus="newsStatus">
-              <li><a href="nd?itemId=${command.getShortId(news.news_id)}">${news.title}</a></li>
-            </c:forEach>
-          </ul>
-        </div>
-        ${command.pieceNewsList(laymod, 1, 5, false, false, false, 'fixednews')}
-        <div class="fixed_news">
-          <p>快速入口</p>
-          <ul  data-edit="{name: '侧边快速入口',field:'fixednews',type:'news_list',reload:true}">
-            <c:forEach items="${newsList}" var="news" varStatus="newsStatus">
-              <li><a href="nd?itemId=${command.getShortId(news.news_id)}">${news.title}</a></li>
-            </c:forEach>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+java.lang.NullPointerException
+  at com.jihui88.frame.core.utils.ObjectUtil.getString(ObjectUtil.java:460)
+  at com.jihui88.sys.web.controller.website.PieceController.pieceBreadcrumbNav(PieceController.java:2735)
+  at sun.reflect.GeneratedMethodAccessor342.invoke(Unknown Source)
+  at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  at java.lang.reflect.Method.invoke(Method.java:498)
+  at javax.el.BeanELResolver.invoke(BeanELResolver.java:183)
+  at org.apache.jasper.el.JasperELResolver.invoke(JasperELResolver.java:139)
+  at org.apache.el.parser.AstValue.getValue(AstValue.java:173)
+  at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:184)
+  at org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate(PageContextImpl.java:967)
+  at org.apache.jsp.WEB_002dINF.jsp.piece.BreakNav9_005fpc_jsp._jspService(BreakNav9_005fpc_jsp.java:90)
+  at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+  at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+  at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+  at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)
+  at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+  at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+  at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+  at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+  at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:748)
+  at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:604)
+  at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:543)
+  at sun.reflect.GeneratedMethodAccessor118.invoke(Unknown Source)
+  at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  at java.lang.reflect.Method.invoke(Method.java:498)
+  at net.bull.javamelody.JspWrapper.invoke(JspWrapper.java:150)
+  at net.bull.javamelody.JdbcWrapper$DelegatingInvocationHandler.invoke(JdbcWrapper.java:286)
+  at com.sun.proxy.$Proxy97.include(Unknown Source)
+  at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:954)
+  at org.apache.jsp.WEB_002dINF.jsp.index_005fpc_jsp._jspx_meth_c_005fif_005f6(index_005fpc_jsp.java:778)
+  at org.apache.jsp.WEB_002dINF.jsp.index_005fpc_jsp._jspx_meth_c_005fforEach_005f2(index_005fpc_jsp.java:715)
+  at org.apache.jsp.WEB_002dINF.jsp.index_005fpc_jsp._jspService(index_005fpc_jsp.java:202)
+  at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+  at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+  at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+  at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)
+  at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+  at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+  at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+  at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+  at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+  at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+  at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+  at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:748)
+  at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:486)
+  at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:411)
+  at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:338)
+  at sun.reflect.GeneratedMethodAccessor335.invoke(Unknown Source)
+  at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  at java.lang.reflect.Method.invoke(Method.java:498)
+  at net.bull.javamelody.JspWrapper.invoke(JspWrapper.java:150)
+  at net.bull.javamelody.JdbcWrapper$DelegatingInvocationHandler.invoke(JdbcWrapper.java:286)
+  at com.sun.proxy.$Proxy97.forward(Unknown Source)
+  at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:238)
+  at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:250)
+  at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1063)
+  at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:801)
+  at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:719)
+  at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:644)
+  at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:549)
+  at javax.servlet.http.HttpServlet.service(HttpServlet.java:620)
+  at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+  at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+  at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+  at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+  at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+  at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+  at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+  at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+  at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+  at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+  at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:198)
+  at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:176)
+  at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+  at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+  at com.jihui88.frame.core.filter.JspFilter.doFilter(JspFilter.java:96)
+  at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+  at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+  at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+  at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+  at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+  at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+  at com.jihui88.frame.core.session.MemcachedSessionFilter.doFilter(MemcachedSessionFilter.java:61)
+  at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+  at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+  at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+  at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+  at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+  at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+  at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+  at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+  at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+  at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+  at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+  at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+  at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)
+  at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+  at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+  at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+  at java.lang.Thread.run(Thread.java:745)
