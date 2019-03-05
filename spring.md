@@ -34,8 +34,16 @@ $ mvn install  // 编译
 $ mvn clean package -Dmaven.test.skip=true // 打包并跳过单元测试
 $ mvn -DskipTests -Pproduction clean package
 
-$ nohup java -Xmx32m -Xss256k -jar jhw-wechat-article-java-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev&    // nohup 为关闭终端后不退出程序 &为后台运行
-$ nohup java -Xmx32m -jar jhw-wechat-article-java-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod&
+$ nohup java -Xmx32m -Xss256k -jar jhw-wechat-article-java-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev&    // nohup
+
+ 为关闭终端后不退出程序 &为后台运行
+// 文章系统启动
+$ nohup java -jar jhw-wechat-article-java-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod&
+// 订购系统启动
+$ nohup java -jar jhw-online-order-java-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod&
+
+
+
 $ ps -aux| grep jhw   // 查看进程
 
 $ tail -f ./nohup.out  // 查看日志

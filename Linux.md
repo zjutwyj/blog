@@ -92,3 +92,22 @@ $ ps aux | sort -k4nr | head -n 20
 
 
 scp -r target/jhw-online-order-java-0.0.1-SNAPSHOT.zip root@xxx.xx.xx.xx:/mnt/var/www/abbcc/jhw-online-order/jhw-online-order-java
+
+
+### 查询Exception错误
+$ tail -f ./log/cataina.out | grep 'Exception' -n -10 --color
+
+### 查看文件占用内存
+$ du -sh *| sort -n
+
+
+### 查看硬盘空间
+
+$ df -h
+
+### vim 删除多行
+
+单行删除
+：1（待删除行）d
+多行删除
+：1,10d

@@ -1,36 +1,8 @@
-var model = {
-
-    "memberRank": { "name": "ÆÕÍ¨»áÔ±", "enterpriseId": "Enterp_0000000000000000000000039", "rankId": "ff8081814b56f84d014b572385030002", "isDefault": "01", "point": 0, "addTime": 1423096120472, "updateTime": 1430875158815, "preferentialScale": 100, "rdesc": null },
-    "belongId": null,
-    "deposit": 11,
-    "point": 11,
-    "addTime": "2017-01-11T01:13:29.000Z",
-    "openid": "ofDJ5sxTNRdGIxXbPqD5fx5hnvsY",
-    "safeQuestion": null,
-    "updateTime": "2018-03-28 15:59:37",
-    "img": "http://wx.qlogo.cn/mmopen/PiajxSqBRaEJH2gicKDImXmFkQqcmhsRE8ibYjmVS7BFIn6bYOPF4KOSSHO0V2MEAdiahCRWdGIqTcQGjfcvshqxFA/0",
-    "sex": "",
-    "city": "",
-    "isAccountLocked": "00",
-    "isAccountEnabled": "00",
-    "safeAnswer": null,
-    "loginFailureCount": 0,
-    "lockedDate": null,
-    "registerIp": "127.0.0.1",
-    "loginIp": "127.0.0.1",
-    "loginDate": 1484097209803,
-    "passwordRecoverKey": null,
-    "cartItemSet": [],
-    "receiverSet": [],
-    "memberAttributeMapStore": [{ "id": "402801815a8c94ec015a8d30e5660010", "element": "[ÊÇ]", "memberId": "ff808181596ed2a001598b1645cb041f", "att": { "name": "ÊÇ·ñÒÑ»é", "attributeType": "select", "sort": 3, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "ff8081815481b8e9015499b91e9b03b0", "addTime": 1462867926680, "updateTime": 1527068021987, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": "[\"ÊÇ\",\"·ñ\"]", "attributeOptionList": ["ÊÇ", "·ñ"], "value": "ÊÇ" } }, { "id": "402801815a8c94ec015a8d30e565000e", "element": "[2017-03-01]", "memberId": "ff808181596ed2a001598b1645cb041f", "att": { "name": "µÇ¼ÇÈÕÆÚ", "attributeType": "date", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "ff80818153e8ef490154031fb1e80635", "addTime": 1460341289445, "updateTime": 1462867988012, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": null, "attributeOptionList": null, "value": "2017-03-02" } }, { "id": "402801815a8c94ec015a8d30e566000f", "element": "[1]", "memberId": "ff808181596ed2a001598b1645cb041f", "att": { "name": "ÁªÏµÎÒÃÇ", "attributeType": "text", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "4028818f4a904861014a9052ab050005", "addTime": 1419760544511, "updateTime": 1419760544511, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": null, "attributeOptionList": null, "value": "1" } }, { "id": "402801815a8c94ec015a8d30e565000c", "element": "[1]", "memberId": "ff808181596ed2a001598b1645cb041f", "att": { "name": "  ÄêÁä", "attributeType": "number", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "4028818f4a954b87014a959e96c30004", "addTime": 1419849406143, "updateTime": 1462868198293, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": "[\"Ò»¸öÈËÂð\"]", "attributeOptionList": ["Ò»¸öÈËÂð"], "value": 1 } }, { "id": "402801815a8c94ec015a8d30e565000d", "element": "[³ª¸è]", "memberId": "ff808181596ed2a001598b1645cb041f", "att": { "name": "°®ºÃ", "attributeType": "checkbox", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "4028818f4ac894bd014ac8a7a2ee0003", "addTime": 1420705637087, "updateTime": 1462867959468, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": "[\"³ª¸è\",\"ÌøÎè\",\"ÏÂÆå\",\"´òÆ¹ÅÒ\"]", "attributeOptionList": ["³ª¸è", "ÌøÎè", "ÏÂÆå", "´òÆ¹ÅÒ"], "value": ["³ª¸è"] } }],
-    "depositSet": [],
-    "mobile": null,
-    "province": "",
-    "vericode": null,
-    "items": [{ "name": "ÊÇ·ñÒÑ»é", "attributeType": "select", "sort": 3, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "ff8081815481b8e9015499b91e9b03b0", "addTime": 1462867926680, "updateTime": 1527068021987, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": "[\"ÊÇ\",\"·ñ\"]", "attributeOptionList": ["ÊÇ", "·ñ"], "value": "ÊÇ" }, { "name": "µÇ¼ÇÈÕÆÚ", "attributeType": "date", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "ff80818153e8ef490154031fb1e80635", "addTime": 1460341289445, "updateTime": 1462867988012, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": null, "attributeOptionList": null, "value": "2017-03-02" }, { "name": "ÁªÏµÎÒÃÇ", "attributeType": "text", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "4028818f4a904861014a9052ab050005", "addTime": 1419760544511, "updateTime": 1419760544511, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": null, "attributeOptionList": null, "value": "1" }, { "name": "  ÄêÁä", "attributeType": "number", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "4028818f4a954b87014a959e96c30004", "addTime": 1419849406143, "updateTime": 1462868198293, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": "[\"Ò»¸öÈËÂð\"]", "attributeOptionList": ["Ò»¸öÈËÂð"], "value": 1 }, { "name": "°®ºÃ", "attributeType": "checkbox", "sort": 0, "enterpriseId": "Enterp_0000000000000000000000039", "attId": "4028818f4ac894bd014ac8a7a2ee0003", "addTime": 1420705637087, "updateTime": 1462867959468, "isRequired": "01", "isEnabled": "01", "attributeOptionStore": "[\"³ª¸è\",\"ÌøÎè\",\"ÏÂÆå\",\"´òÆ¹ÅÒ\"]", "attributeOptionList": ["³ª¸è", "ÌøÎè", "ÏÂÆå", "´òÆ¹ÅÒ"], "value": ["³ª¸è"] }],
-    "ff8081815481b8e9015499b91e9b03b0": "ÊÇ",
-    "ff80818153e8ef490154031fb1e80635": "2017-03-02",
-    "4028818f4a904861014a9052ab050005": "1",
-    "4028818f4a954b87014a959e96c30004": 1,
-    "4028818f4ac894bd014ac8a7a2ee0003": ["³ª¸è"]
+- {
+    "attributes": - {
+    },
+    "obj":null,
+    "success":true,
+    "msg":null,
+    "msgType":null
 }
