@@ -126,3 +126,20 @@ $ df -h
 2、粘贴
 
 在命令模式下，将光标移动到将要粘贴的行处，按“p”进行粘贴
+
+### linux 中文件夹的文件按照时间倒序或者升序排列
+1，按照时间升序
+
+命令:ls -lrt
+详细解释:
+
+-l     use a long listing format  以长列表方式显示（详细信息方式）
+-t     sort by modification time 按修改时间排序（最新的在最前面）
+-r     reverse order while sorting （反序）
+2，按照时间降序（最新修改的排在前面）
+
+命令:ls -lt
+详细解释:
+
+-l     use a long listing format  以长列表方式显示（详细信息方式）
+-t     sort by modification time 按修改时间排序（最新的在最前面）
