@@ -172,3 +172,7 @@ select * from tag_relation_ship where type='01' and tag_id in (55,64,82) group b
 <result column="type" property="type" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
 #{type,typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"},
 ```
+
+### mysql查询分析
+
+https://www.cnblogs.com/xpp142857/p/7373005.html

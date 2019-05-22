@@ -34,7 +34,7 @@ $ mvn install  // 编译
 $ mvn clean package -Dmaven.test.skip=true // 打包并跳过单元测试
 $ mvn -DskipTests -Pproduction clean package
 
-$ nohup java -Xmx32m -Xss256k -jar jhw-wechat-article-java-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev&    // nohup
+nohup java -jar -Xms128m -Xmx256m -XX:PermSize=128M -XX:MaxPermSize=256m jhw-online-order-java-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod&      // nohup
 
  为关闭终端后不退出程序 &为后台运行
 // 文章系统启动
